@@ -1,9 +1,3617 @@
 {
-  "schema_version": 1,
-  "target": {
-    "platform": "macOS",
-    "version": "27"
+  "meta": {
+    "title": "pon-macos-compat research sources",
+    "schema_version": 1,
+    "os": "macOS 27 Golden Gate",
+    "created_at": "2026-09-18T14:00:00+09:00",
+    "product_count": 91,
+    "watchlist_count": 0,
+    "purpose": "Persistent source address book for repeatable macOS compatibility research.",
+    "rules": {
+      "must_check_registered_sources_first": true,
+      "source_order": [
+        "support_news",
+        "os_compatibility",
+        "system_requirements",
+        "known_issues",
+        "release_notes",
+        "downloads",
+        "product_page",
+        "app_store",
+        "official_repo"
+      ],
+      "required_os_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27"
+      ],
+      "check_recent_vendor_announcements_first": true,
+      "recent_announcement_window_days": 30,
+      "fallback_search_official_domain_only": true,
+      "general_web_search_only_for_identity_discovery": true,
+      "no_info_means": "unknown",
+      "unsupported_requires_explicit_official_evidence": true,
+      "broad_minimum_requirement_does_not_equal_explicit_macos27_support": true,
+      "explicit_macos27_support_can_complete": true,
+      "checked_sources_required_in_result_snapshot": true,
+      "identity_gate": "If identity_status=needs_identity_confirmation, do not make an automated compatibility verdict.",
+      "broken_source_rule": "If a registered URL is 404, moved, or stale, discover the replacement only on the registered official domain and update this address book."
+    },
+    "publication_note": "公式調査先と調査ルールのみを収録。ローカルパスやインストール版情報は含みません。"
   },
-  "updated_at": "2026-09-20",
-  "sources": []
+  "products": [
+    {
+      "name": "1Password",
+      "vendor": "1Password",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "support.1password.com",
+        "releases.1password.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "1Password"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "1Password system requirements",
+          "url": "https://support.1password.com/system-requirements/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "release_notes",
+          "label": "1Password releases",
+          "url": "https://releases.1password.com/mac/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:support.1password.com \"macOS 27\" \"1Password\"",
+          "site:support.1password.com \"Golden Gate\" \"1Password\"",
+          "site:releases.1password.com \"macOS 27\" \"1Password\"",
+          "site:releases.1password.com \"Golden Gate\" \"1Password\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "1Password for Safari",
+      "vendor": "1Password",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "support.1password.com",
+        "releases.1password.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "1Password for Safari"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "1Password system requirements",
+          "url": "https://support.1password.com/system-requirements/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "release_notes",
+          "label": "1Password for Safari releases",
+          "url": "https://releases.1password.com/safari/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:support.1password.com \"macOS 27\" \"1Password for Safari\"",
+          "site:support.1password.com \"Golden Gate\" \"1Password for Safari\"",
+          "site:releases.1password.com \"macOS 27\" \"1Password for Safari\"",
+          "site:releases.1password.com \"Golden Gate\" \"1Password for Safari\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Adobe Camera Raw / DNG Tools",
+      "vendor": "Adobe",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "helpx.adobe.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Adobe Camera Raw / DNG Tools"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "os_compatibility",
+          "label": "Adobe macOS compatibility",
+          "url": "https://helpx.adobe.com/jp/download-install/apps/system-requirements/apps-compatible-macos.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "system_requirements",
+          "label": "Camera Raw system requirements",
+          "url": "https://helpx.adobe.com/jp/camera-raw/desktop/get-started/system-requirements/system-requirements.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "support_news",
+          "label": "Camera Raw support",
+          "url": "https://helpx.adobe.com/jp/camera-raw.html",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:helpx.adobe.com \"macOS 27\" \"Adobe Camera Raw / DNG Tools\"",
+          "site:helpx.adobe.com \"Golden Gate\" \"Adobe Camera Raw / DNG Tools\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Adobe Lightroom Classic",
+      "vendor": "Adobe",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "helpx.adobe.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Adobe Lightroom Classic"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "os_compatibility",
+          "label": "Adobe macOS compatibility",
+          "url": "https://helpx.adobe.com/jp/download-install/apps/system-requirements/apps-compatible-macos.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "known_issues",
+          "label": "Lightroom Classic known issues",
+          "url": "https://helpx.adobe.com/jp/lightroom-classic/desktop/troubleshooting/known-issues.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "support_news",
+          "label": "Lightroom Classic support",
+          "url": "https://helpx.adobe.com/jp/lightroom-classic.html",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:helpx.adobe.com \"macOS 27\" \"Adobe Lightroom Classic\"",
+          "site:helpx.adobe.com \"Golden Gate\" \"Adobe Lightroom Classic\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Adobe Photoshop",
+      "vendor": "Adobe",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "helpx.adobe.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Adobe Photoshop"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "os_compatibility",
+          "label": "Adobe macOS compatibility",
+          "url": "https://helpx.adobe.com/jp/download-install/apps/system-requirements/apps-compatible-macos.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "system_requirements",
+          "label": "Photoshop technical requirements",
+          "url": "https://helpx.adobe.com/jp/photoshop/desktop/get-started/technical-requirements-installation/adobe-photoshop-on-desktop-technical-requirements.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "support_news",
+          "label": "Adobe Photoshop support",
+          "url": "https://helpx.adobe.com/jp/photoshop.html",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:helpx.adobe.com \"macOS 27\" \"Adobe Photoshop\"",
+          "site:helpx.adobe.com \"Golden Gate\" \"Adobe Photoshop\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Amazon Kindle",
+      "vendor": "Amazon",
+      "identity_status": "likely",
+      "automation_allowed": true,
+      "official_domains": [
+        "amazon.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Amazon Kindle"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "Amazon Kindle apps",
+          "url": "https://www.amazon.com/kindleapps",
+          "verification": "candidate",
+          "note": "Official Amazon domain; exact regional landing page may redirect."
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:amazon.com \"macOS 27\" \"Amazon Kindle\"",
+          "site:amazon.com \"Golden Gate\" \"Amazon Kindle\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "AmorphousDiskMark",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "apps.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "AmorphousDiskMark"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "app_store",
+          "label": "AmorphousDiskMark on Mac App Store",
+          "url": "https://apps.apple.com/jp/app/amorphousdiskmark/id1168254295?mt=12",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:apps.apple.com \"macOS 27\" \"AmorphousDiskMark\"",
+          "site:apps.apple.com \"Golden Gate\" \"AmorphousDiskMark\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Anaconda-Navigator",
+      "vendor": "Anaconda",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "anaconda.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Anaconda-Navigator"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "Anaconda Navigator documentation",
+          "url": "https://www.anaconda.com/docs/tools/anaconda-navigator",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Anaconda documentation",
+          "url": "https://www.anaconda.com/docs",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:anaconda.com \"macOS 27\" \"Anaconda-Navigator\"",
+          "site:anaconda.com \"Golden Gate\" \"Anaconda-Navigator\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "AppCleaner",
+      "vendor": "FreeMacSoft",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "freemacsoft.net"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "AppCleaner"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "FreeMacSoft AppCleaner",
+          "url": "https://freemacsoft.net/appcleaner/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:freemacsoft.net \"macOS 27\" \"AppCleaner\"",
+          "site:freemacsoft.net \"Golden Gate\" \"AppCleaner\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Apple iWork",
+      "vendor": "Apple",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "support.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Apple iWork"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "support_news",
+          "label": "Apple Pages support",
+          "url": "https://support.apple.com/pages",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Apple Numbers support",
+          "url": "https://support.apple.com/numbers",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "support_news",
+          "label": "Apple Keynote support",
+          "url": "https://support.apple.com/keynote",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:support.apple.com \"macOS 27\" \"Apple iWork\"",
+          "site:support.apple.com \"Golden Gate\" \"Apple iWork\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Apple Media / Browser",
+      "vendor": "Apple",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "support.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Apple Media / Browser"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "support_news",
+          "label": "Apple Safari support",
+          "url": "https://support.apple.com/safari",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Apple iMovie support",
+          "url": "https://support.apple.com/imovie",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:support.apple.com \"macOS 27\" \"Apple Media / Browser\"",
+          "site:support.apple.com \"Golden Gate\" \"Apple Media / Browser\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "BatChmod",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "lagentesoft.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "BatChmod"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "Lagentesoft BatChmod instructions",
+          "url": "https://lagentesoft.com/batchmod-instructions/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "product_page",
+          "label": "Lagentesoft",
+          "url": "https://lagentesoft.com/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:lagentesoft.com \"macOS 27\" \"BatChmod\"",
+          "site:lagentesoft.com \"Golden Gate\" \"BatChmod\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "battery",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [
+        "github.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "battery"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "official_repo",
+          "label": "actuallymentor/battery",
+          "url": "https://github.com/actuallymentor/battery",
+          "verification": "candidate",
+          "note": "Generic app name; confirm installed bundle identity before using this source for verdicts."
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:github.com \"macOS 27\" \"battery\"",
+          "site:github.com \"Golden Gate\" \"battery\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "BetterTouchTool",
+      "vendor": "folivora.AI",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "updates.folivora.ai",
+        "community.folivora.ai"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "BetterTouchTool"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "release_notes",
+          "label": "BetterTouchTool release notes",
+          "url": "https://updates.folivora.ai/bettertouchtool_release_notes.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "BetterTouchTool macOS 27 community thread",
+          "url": "https://community.folivora.ai/t/macos-27-golden-gate/47224",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:updates.folivora.ai \"macOS 27\" \"BetterTouchTool\"",
+          "site:updates.folivora.ai \"Golden Gate\" \"BetterTouchTool\"",
+          "site:community.folivora.ai \"macOS 27\" \"BetterTouchTool\"",
+          "site:community.folivora.ai \"Golden Gate\" \"BetterTouchTool\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Blackmagic Disk Speed Test",
+      "vendor": "Blackmagic Design",
+      "identity_status": "likely",
+      "automation_allowed": true,
+      "official_domains": [
+        "blackmagicdesign.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Blackmagic Disk Speed Test"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "support_news",
+          "label": "Blackmagic Design support",
+          "url": "https://www.blackmagicdesign.com/support/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "product_page",
+          "label": "Blackmagic Design products",
+          "url": "https://www.blackmagicdesign.com/products/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:blackmagicdesign.com \"macOS 27\" \"Blackmagic Disk Speed Test\"",
+          "site:blackmagicdesign.com \"Golden Gate\" \"Blackmagic Disk Speed Test\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "calibre",
+      "vendor": "calibre",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "calibre-ebook.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "calibre"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "downloads",
+          "label": "calibre macOS download",
+          "url": "https://calibre-ebook.com/download_osx",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "release_notes",
+          "label": "calibre what's new",
+          "url": "https://calibre-ebook.com/whats-new",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:calibre-ebook.com \"macOS 27\" \"calibre\"",
+          "site:calibre-ebook.com \"Golden Gate\" \"calibre\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Chachatto",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "indigovillage.jp",
+        "apps.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Chachatto"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "ã¡ãã¡ãã£ã¨ãªãã¼ãã¼ support",
+          "url": "https://indigovillage.jp/chachatto/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "app_store",
+          "label": "ã¡ãã¡ãã£ã¨ãªãã¼ãã¼ on Mac App Store",
+          "url": "https://apps.apple.com/jp/app/%E3%81%A1%E3%82%83%E3%81%A1%E3%82%83%E3%81%A3%E3%81%A8%E3%83%AA%E3%83%8D%E3%83%BC%E3%83%9E%E3%83%BC/id6462363612?mt=12",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:indigovillage.jp \"macOS 27\" \"Chachatto\"",
+          "site:indigovillage.jp \"Golden Gate\" \"Chachatto\"",
+          "site:apps.apple.com \"macOS 27\" \"Chachatto\"",
+          "site:apps.apple.com \"Golden Gate\" \"Chachatto\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "ChatGPT",
+      "vendor": "OpenAI",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "help.openai.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "ChatGPT"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "ChatGPT macOS app system requirements",
+          "url": "https://help.openai.com/ja-jp/articles/9395554-chatgpt-macos-%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A6%81%E4%BB%B6%E3%81%AF%E4%BD%95%E3%81%A7%E3%81%99%E3%81%8B",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "ChatGPT macOS help collection",
+          "url": "https://help.openai.com/en/collections/9403039-macos",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:help.openai.com \"macOS 27\" \"ChatGPT\"",
+          "site:help.openai.com \"Golden Gate\" \"ChatGPT\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "ChatGPT Classic",
+      "vendor": "OpenAI",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [
+        "help.openai.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "ChatGPT Classic"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "support_news",
+          "label": "ChatGPT macOS help collection",
+          "url": "https://help.openai.com/en/collections/9403039-macos",
+          "verification": "candidate",
+          "note": "Confirm whether installed 'ChatGPT Classic' is the OpenAI app variant before verdict."
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:help.openai.com \"macOS 27\" \"ChatGPT Classic\"",
+          "site:help.openai.com \"Golden Gate\" \"ChatGPT Classic\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "ChronoSync",
+      "vendor": "Econ Technologies",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "econtechnologies.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "ChronoSync"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "release_notes",
+          "label": "ChronoSync release notes",
+          "url": "https://www.econtechnologies.com/support/chronosync/notes.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "ChronoSync support",
+          "url": "https://www.econtechnologies.com/support/chronosync/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:econtechnologies.com \"macOS 27\" \"ChronoSync\"",
+          "site:econtechnologies.com \"Golden Gate\" \"ChronoSync\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "ComicViewer",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [
+        "apps.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "ComicViewer"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "app_store",
+          "label": "ComicViewer 2 on App Store",
+          "url": "https://apps.apple.com/jp/app/comicviewer-2/id782969964?platform=mac",
+          "verification": "candidate",
+          "note": "Installed app is named ComicViewer; confirm this is the same product."
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:apps.apple.com \"macOS 27\" \"ComicViewer\"",
+          "site:apps.apple.com \"Golden Gate\" \"ComicViewer\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "CompareMerge",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [
+        "apps.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "CompareMerge"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "app_store",
+          "label": "CompareMerge on App Store",
+          "url": "https://apps.apple.com/jp/app/comparemerge/id478570084",
+          "verification": "candidate",
+          "note": "Confirm bundle identity."
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:apps.apple.com \"macOS 27\" \"CompareMerge\"",
+          "site:apps.apple.com \"Golden Gate\" \"CompareMerge\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Crontab Creator",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Crontab Creator"
+      ],
+      "sources": [],
+      "fallback": {
+        "mode": "identity_discovery_only",
+        "queries": [
+          "\"Crontab Creator\" \"macOS 27\"",
+          "\"Crontab Creator\" \"Golden Gate\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Cryptomator",
+      "vendor": "Skymatic",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "cryptomator.org",
+        "docs.cryptomator.org"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Cryptomator"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "Cryptomator macOS downloads",
+          "url": "https://cryptomator.org/downloads/mac/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "release_notes",
+          "label": "Cryptomator downloads/changelog",
+          "url": "https://cryptomator.org/downloads/",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "support_news",
+          "label": "Cryptomator desktop setup",
+          "url": "https://docs.cryptomator.org/desktop/setup/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:cryptomator.org \"macOS 27\" \"Cryptomator\"",
+          "site:cryptomator.org \"Golden Gate\" \"Cryptomator\"",
+          "site:docs.cryptomator.org \"macOS 27\" \"Cryptomator\"",
+          "site:docs.cryptomator.org \"Golden Gate\" \"Cryptomator\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "DevHub",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "apps.apple.com",
+        "wangchujiang.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "DevHub"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "app_store",
+          "label": "DevHub on Mac App Store",
+          "url": "https://apps.apple.com/jp/app/devhub/id6476452351?mt=12",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "product_page",
+          "label": "DevHub developer site",
+          "url": "https://wangchujiang.com/DevHub/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:apps.apple.com \"macOS 27\" \"DevHub\"",
+          "site:apps.apple.com \"Golden Gate\" \"DevHub\"",
+          "site:wangchujiang.com \"macOS 27\" \"DevHub\"",
+          "site:wangchujiang.com \"Golden Gate\" \"DevHub\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "DriveDx",
+      "vendor": "BinaryFruit",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "binaryfruit.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "DriveDx"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "DriveDx official site",
+          "url": "https://binaryfruit.com/drivedx",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "BinaryFruit support",
+          "url": "https://binaryfruit.com/support",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:binaryfruit.com \"macOS 27\" \"DriveDx\"",
+          "site:binaryfruit.com \"Golden Gate\" \"DriveDx\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Dropbox",
+      "vendor": "Dropbox",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "help.dropbox.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Dropbox"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "Dropbox system requirements",
+          "url": "https://help.dropbox.com/installs/system-requirements",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Dropbox help center",
+          "url": "https://help.dropbox.com/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:help.dropbox.com \"macOS 27\" \"Dropbox\"",
+          "site:help.dropbox.com \"Golden Gate\" \"Dropbox\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Duplicate File Finder",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [
+        "nektony.com",
+        "apps.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Duplicate File Finder"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "Nektony Duplicate File Finder",
+          "url": "https://nektony.com/duplicate-finder-free",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "app_store",
+          "label": "Duplicate File Finder Remover on Mac App Store",
+          "url": "https://apps.apple.com/jp/app/duplicate-file-finder-remover/id1032755628?mt=12",
+          "verification": "candidate",
+          "note": "Likely identity; confirm installed bundle/vendor before verdict."
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:nektony.com \"macOS 27\" \"Duplicate File Finder\"",
+          "site:nektony.com \"Golden Gate\" \"Duplicate File Finder\"",
+          "site:apps.apple.com \"macOS 27\" \"Duplicate File Finder\"",
+          "site:apps.apple.com \"Golden Gate\" \"Duplicate File Finder\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Encrypto",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [
+        "apps.apple.com",
+        "macpaw.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Encrypto"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "app_store",
+          "label": "Encrypto on Mac App Store",
+          "url": "https://apps.apple.com/us/app/encrypto-secure-your-files/id935235287?mt=12",
+          "verification": "candidate",
+          "note": "MacPaw product; confirm installed bundle identity."
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "MacPaw support",
+          "url": "https://macpaw.com/support",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:apps.apple.com \"macOS 27\" \"Encrypto\"",
+          "site:apps.apple.com \"Golden Gate\" \"Encrypto\"",
+          "site:macpaw.com \"macOS 27\" \"Encrypto\"",
+          "site:macpaw.com \"Golden Gate\" \"Encrypto\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Epson Software",
+      "vendor": "Epson",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "epson.jp"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Epson Software"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "os_compatibility",
+          "label": "Epson scanner macOS Golden Gate compatibility",
+          "url": "https://www.epson.jp/support/taiou/os/list/sc_mac_goldengate.htm",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Epson support",
+          "url": "https://www.epson.jp/support/",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "downloads",
+          "label": "Epson Scan 2 macOS 27 example",
+          "url": "https://www.epson.jp/dl_soft/readme/46129.htm",
+          "verification": "verified",
+          "note": "Model-specific example; use compatibility list first."
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:epson.jp \"macOS 27\" \"Epson Software\"",
+          "site:epson.jp \"Golden Gate\" \"Epson Software\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "FileZilla",
+      "vendor": "FileZilla Project",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "filezilla-project.org"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "FileZilla"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "downloads",
+          "label": "FileZilla Client download",
+          "url": "https://filezilla-project.org/download.php?type=client",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "FileZilla project",
+          "url": "https://filezilla-project.org/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:filezilla-project.org \"macOS 27\" \"FileZilla\"",
+          "site:filezilla-project.org \"Golden Gate\" \"FileZilla\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Find Any File",
+      "vendor": "Thomas Tempelmann",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "findanyfile.app"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Find Any File"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "Find Any File official site",
+          "url": "https://findanyfile.app/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:findanyfile.app \"macOS 27\" \"Find Any File\"",
+          "site:findanyfile.app \"Golden Gate\" \"Find Any File\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Foldery",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "apps.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Foldery"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "app_store",
+          "label": "Foldery on Mac App Store",
+          "url": "https://apps.apple.com/jp/app/foldery/id815333099?mt=12",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:apps.apple.com \"macOS 27\" \"Foldery\"",
+          "site:apps.apple.com \"Golden Gate\" \"Foldery\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Freee.DSig",
+      "vendor": "freee",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "support.freee.co.jp"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Freee.DSig"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "support_news",
+          "label": "freee electronic filing app guide",
+          "url": "https://support.freee.co.jp/hc/ja/articles/4416751078937-%E9%9B%BB%E5%AD%90%E7%94%B3%E5%91%8A-%E7%94%B3%E8%AB%8B%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "freee help center",
+          "url": "https://support.freee.co.jp/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:support.freee.co.jp \"macOS 27\" \"Freee.DSig\"",
+          "site:support.freee.co.jp \"Golden Gate\" \"Freee.DSig\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "GitHub Desktop",
+      "vendor": "GitHub",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "desktop.github.com",
+        "docs.github.com",
+        "github.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "GitHub Desktop"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "release_notes",
+          "label": "GitHub Desktop release notes",
+          "url": "https://desktop.github.com/release-notes/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "system_requirements",
+          "label": "GitHub Desktop supported operating systems",
+          "url": "https://docs.github.com/en/desktop/overview/supported-operating-systems-for-github-desktop",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "official_repo",
+          "label": "GitHub Desktop releases",
+          "url": "https://github.com/desktop/desktop/releases",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:desktop.github.com \"macOS 27\" \"GitHub Desktop\"",
+          "site:desktop.github.com \"Golden Gate\" \"GitHub Desktop\"",
+          "site:docs.github.com \"macOS 27\" \"GitHub Desktop\"",
+          "site:docs.github.com \"Golden Gate\" \"GitHub Desktop\"",
+          "site:github.com \"macOS 27\" \"GitHub Desktop\"",
+          "site:github.com \"Golden Gate\" \"GitHub Desktop\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Godox V2.0",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "godox.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Godox V2.0"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "downloads",
+          "label": "Godox firmware control system",
+          "url": "https://www.godox.com/firmware-control-system_2/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Godox support",
+          "url": "https://www.godox.com/support/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:godox.com \"macOS 27\" \"Godox V2.0\"",
+          "site:godox.com \"Golden Gate\" \"Godox V2.0\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Google Chrome",
+      "vendor": "Google",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "support.google.com",
+        "chromereleases.googleblog.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Google Chrome"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "Google Chrome system requirements",
+          "url": "https://support.google.com/chrome/answer/95346?hl=ja",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "release_notes",
+          "label": "Chrome releases",
+          "url": "https://chromereleases.googleblog.com/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:support.google.com \"macOS 27\" \"Google Chrome\"",
+          "site:support.google.com \"Golden Gate\" \"Google Chrome\"",
+          "site:chromereleases.googleblog.com \"macOS 27\" \"Google Chrome\"",
+          "site:chromereleases.googleblog.com \"Golden Gate\" \"Google Chrome\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Google Drive / Workspace",
+      "vendor": "Google",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "support.google.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Google Drive / Workspace"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "Google Drive for desktop system requirements",
+          "url": "https://support.google.com/drive/answer/2375082?hl=en",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Use Drive for desktop on macOS",
+          "url": "https://support.google.com/drive/answer/12178485?hl=en",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:support.google.com \"macOS 27\" \"Google Drive / Workspace\"",
+          "site:support.google.com \"Golden Gate\" \"Google Drive / Workspace\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "GrandPerspective",
+      "vendor": "Eriban Software",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "grandperspectiv.sourceforge.net"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "GrandPerspective"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "GrandPerspective official site",
+          "url": "https://grandperspectiv.sourceforge.net/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:grandperspectiv.sourceforge.net \"macOS 27\" \"GrandPerspective\"",
+          "site:grandperspectiv.sourceforge.net \"Golden Gate\" \"GrandPerspective\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Hidden Bar",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [
+        "github.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Hidden Bar"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "official_repo",
+          "label": "Hidden Bar maintained fork candidate",
+          "url": "https://github.com/UeharaYou/HiddenBar",
+          "verification": "candidate",
+          "note": "Several apps/forks share this name; confirm installed bundle identity."
+        },
+        {
+          "priority": 2,
+          "type": "official_repo",
+          "label": "Hidden Bar original/community candidate",
+          "url": "https://github.com/dwarvesf/hidden",
+          "verification": "candidate",
+          "note": "Confirm installed bundle identity."
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:github.com \"macOS 27\" \"Hidden Bar\"",
+          "site:github.com \"Golden Gate\" \"Hidden Bar\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Hot",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "github.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Hot"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "official_repo",
+          "label": "Hot official repository",
+          "url": "https://github.com/macmade/Hot",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:github.com \"macOS 27\" \"Hot\"",
+          "site:github.com \"Golden Gate\" \"Hot\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "HTTPie",
+      "vendor": "HTTPie",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "httpie.io"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "HTTPie"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "HTTPie Desktop",
+          "url": "https://httpie.io/desktop",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "HTTPie docs",
+          "url": "https://httpie.io/docs",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:httpie.io \"macOS 27\" \"HTTPie\"",
+          "site:httpie.io \"Golden Gate\" \"HTTPie\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "IINA",
+      "vendor": "IINA",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "iina.io",
+        "blog.iina.io",
+        "github.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "IINA"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "IINA official site",
+          "url": "https://iina.io/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "downloads",
+          "label": "IINA downloads",
+          "url": "https://blog.iina.io/download/",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "official_repo",
+          "label": "IINA releases",
+          "url": "https://github.com/iina/iina/releases",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:iina.io \"macOS 27\" \"IINA\"",
+          "site:iina.io \"Golden Gate\" \"IINA\"",
+          "site:blog.iina.io \"macOS 27\" \"IINA\"",
+          "site:blog.iina.io \"Golden Gate\" \"IINA\"",
+          "site:github.com \"macOS 27\" \"IINA\"",
+          "site:github.com \"Golden Gate\" \"IINA\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "ImageDiff",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [
+        "apps.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "ImageDiff"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "app_store",
+          "label": "ImageDiff 2 candidate",
+          "url": "https://apps.apple.com/jp/app/imagediff-2/id1602522152?mt=12",
+          "verification": "candidate",
+          "note": "Multiple ImageDiff apps exist; confirm installed bundle identity before verdict."
+        },
+        {
+          "priority": 2,
+          "type": "app_store",
+          "label": "ImageDiff - Compare images alternative candidate",
+          "url": "https://apps.apple.com/us/app/imagediff-compare-images/id6504044598",
+          "verification": "candidate",
+          "note": "Alternative identity candidate."
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:apps.apple.com \"macOS 27\" \"ImageDiff\"",
+          "site:apps.apple.com \"Golden Gate\" \"ImageDiff\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "ImagenAI",
+      "vendor": "ImagenAI",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "support.imagen-ai.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "ImagenAI"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "Imagen hardware and software requirements",
+          "url": "https://support.imagen-ai.com/hc/en-us/articles/4445860985361-Minimum-hardware-and-software-requirements-and-supported-file-formats",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Imagen support",
+          "url": "https://support.imagen-ai.com/hc/en-us",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:support.imagen-ai.com \"macOS 27\" \"ImagenAI\"",
+          "site:support.imagen-ai.com \"Golden Gate\" \"ImagenAI\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "JPKI",
+      "vendor": "J-LIS",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "jpki.go.jp"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "JPKI"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "os_compatibility",
+          "label": "JPKI Mac operating environment",
+          "url": "https://www.jpki.go.jp/download/mac.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "JPKI client software news",
+          "url": "https://www.jpki.go.jp/download/news.html",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:jpki.go.jp \"macOS 27\" \"JPKI\"",
+          "site:jpki.go.jp \"Golden Gate\" \"JPKI\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "LanScan",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [
+        "apps.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "LanScan"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "app_store",
+          "label": "LanScan on Mac App Store",
+          "url": "https://apps.apple.com/jp/app/lanscan/id472226235?mt=12",
+          "verification": "candidate",
+          "note": "Confirm installed bundle identity."
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:apps.apple.com \"macOS 27\" \"LanScan\"",
+          "site:apps.apple.com \"Golden Gate\" \"LanScan\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "LibreOffice",
+      "vendor": "The Document Foundation",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "libreoffice.org",
+        "wiki.documentfoundation.org"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "LibreOffice"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "LibreOffice system requirements",
+          "url": "https://www.libreoffice.org/system-requirements/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "release_notes",
+          "label": "LibreOffice release notes",
+          "url": "https://wiki.documentfoundation.org/ReleaseNotes",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:libreoffice.org \"macOS 27\" \"LibreOffice\"",
+          "site:libreoffice.org \"Golden Gate\" \"LibreOffice\"",
+          "site:wiki.documentfoundation.org \"macOS 27\" \"LibreOffice\"",
+          "site:wiki.documentfoundation.org \"Golden Gate\" \"LibreOffice\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "LINE",
+      "vendor": "LINE Yahoo",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "help.line.me"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "LINE"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "LINE system requirements",
+          "url": "https://help.line.me/line?contentId=10002433&lang=ja",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "LINE Mac help",
+          "url": "https://help.line.me/line/mac?lang=ja",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:help.line.me \"macOS 27\" \"LINE\"",
+          "site:help.line.me \"Golden Gate\" \"LINE\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Lingon 3",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "peterborgapps.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Lingon 3"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "Peter Borg Apps Lingon",
+          "url": "https://www.peterborgapps.com/lingon/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Peter Borg Apps support",
+          "url": "https://www.peterborgapps.com/support/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:peterborgapps.com \"macOS 27\" \"Lingon 3\"",
+          "site:peterborgapps.com \"Golden Gate\" \"Lingon 3\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Lingon X",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "peterborgapps.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Lingon X"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "Peter Borg Apps Lingon",
+          "url": "https://www.peterborgapps.com/lingon/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Peter Borg Apps support",
+          "url": "https://www.peterborgapps.com/support/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:peterborgapps.com \"macOS 27\" \"Lingon X\"",
+          "site:peterborgapps.com \"Golden Gate\" \"Lingon X\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "logioptionsplus",
+      "vendor": "Logitech",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "logitech.com",
+        "support.logi.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "logioptionsplus"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "Logitech Options+",
+          "url": "https://www.logitech.com/en-us/software/options.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Logitech support",
+          "url": "https://support.logi.com/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:logitech.com \"macOS 27\" \"logioptionsplus\"",
+          "site:logitech.com \"Golden Gate\" \"logioptionsplus\"",
+          "site:support.logi.com \"macOS 27\" \"logioptionsplus\"",
+          "site:support.logi.com \"Golden Gate\" \"logioptionsplus\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Macs Fan Control",
+      "vendor": "CrystalIDEA",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "crystalidea.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Macs Fan Control"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "downloads",
+          "label": "Macs Fan Control download",
+          "url": "https://crystalidea.com/macs-fan-control/download",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "release_notes",
+          "label": "Macs Fan Control release notes",
+          "url": "https://crystalidea.com/macs-fan-control/release-notes",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:crystalidea.com \"macOS 27\" \"Macs Fan Control\"",
+          "site:crystalidea.com \"Golden Gate\" \"Macs Fan Control\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Magnet",
+      "vendor": "CrowdCafÃ©",
+      "identity_status": "likely",
+      "automation_allowed": true,
+      "official_domains": [
+        "magnet.crowdcafe.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Magnet"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "Magnet official site",
+          "url": "https://magnet.crowdcafe.com/",
+          "verification": "candidate",
+          "note": "Official vendor domain; verify if URL redirects."
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:magnet.crowdcafe.com \"macOS 27\" \"Magnet\"",
+          "site:magnet.crowdcafe.com \"Golden Gate\" \"Magnet\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "MAMP",
+      "vendor": "MAMP GmbH",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "mamp.info",
+        "documentation.mamp.info"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "MAMP"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "release_notes",
+          "label": "MAMP release notes",
+          "url": "https://www.mamp.info/en/release-notes/mac/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "system_requirements",
+          "label": "MAMP PRO system requirements",
+          "url": "https://documentation.mamp.info/en/MAMP-PRO-Mac/Getting-started/System-Requirements/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:mamp.info \"macOS 27\" \"MAMP\"",
+          "site:mamp.info \"Golden Gate\" \"MAMP\"",
+          "site:documentation.mamp.info \"macOS 27\" \"MAMP\"",
+          "site:documentation.mamp.info \"Golden Gate\" \"MAMP\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "MAMP PRO",
+      "vendor": "MAMP GmbH",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "mamp.info",
+        "documentation.mamp.info"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "MAMP PRO"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "release_notes",
+          "label": "MAMP & MAMP PRO release notes",
+          "url": "https://www.mamp.info/en/release-notes/mac/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "system_requirements",
+          "label": "MAMP PRO system requirements",
+          "url": "https://documentation.mamp.info/en/MAMP-PRO-Mac/Getting-started/System-Requirements/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:mamp.info \"macOS 27\" \"MAMP PRO\"",
+          "site:mamp.info \"Golden Gate\" \"MAMP PRO\"",
+          "site:documentation.mamp.info \"macOS 27\" \"MAMP PRO\"",
+          "site:documentation.mamp.info \"Golden Gate\" \"MAMP PRO\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "MINI_KEYBOARD",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "MINI_KEYBOARD"
+      ],
+      "sources": [],
+      "fallback": {
+        "mode": "identity_discovery_only",
+        "queries": [
+          "\"MINI_KEYBOARD\" \"macOS 27\"",
+          "\"MINI_KEYBOARD\" \"Golden Gate\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "MosaicTool",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "github.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "MosaicTool"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "official_repo",
+          "label": "MosaicTool official repository",
+          "url": "https://github.com/kidonaru/MosaicTool",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:github.com \"macOS 27\" \"MosaicTool\"",
+          "site:github.com \"Golden Gate\" \"MosaicTool\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "MynaPortalApp",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "myna.go.jp"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "MynaPortalApp"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "MynaPortal recommended environment",
+          "url": "https://myna.go.jp/html/dousakankyou.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "MynaPortal",
+          "url": "https://myna.go.jp/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:myna.go.jp \"macOS 27\" \"MynaPortalApp\"",
+          "site:myna.go.jp \"Golden Gate\" \"MynaPortalApp\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Native SQLite Manager",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "apps.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Native SQLite Manager"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "app_store",
+          "label": "Native SQLite Manager on Mac App Store",
+          "url": "https://apps.apple.com/us/app/native-sqlite-manager/id1416282836?mt=12",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:apps.apple.com \"macOS 27\" \"Native SQLite Manager\"",
+          "site:apps.apple.com \"Golden Gate\" \"Native SQLite Manager\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Network Utility",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [
+        "networkutility.app",
+        "apps.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Network Utility"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "Network Utility developer site candidate",
+          "url": "https://networkutility.app/",
+          "verification": "candidate",
+          "note": "Installed app name is generic and Mac product naming changed; confirm bundle identity."
+        },
+        {
+          "priority": 2,
+          "type": "app_store",
+          "label": "Network Utility App Store candidate",
+          "url": "https://apps.apple.com/jp/app/network-utility/id573021799?platform=mac",
+          "verification": "candidate",
+          "note": "Confirm installed bundle identity."
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:networkutility.app \"macOS 27\" \"Network Utility\"",
+          "site:networkutility.app \"Golden Gate\" \"Network Utility\"",
+          "site:apps.apple.com \"macOS 27\" \"Network Utility\"",
+          "site:apps.apple.com \"Golden Gate\" \"Network Utility\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Nik Collection 8",
+      "vendor": "DxO",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "support.dxo.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Nik Collection 8"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "Nik Collection system requirements",
+          "url": "https://support.dxo.com/hc/en-us/articles/4407343447697-System-requirements-for-Nik-Collection",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "DxO support",
+          "url": "https://support.dxo.com/hc/en-us",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:support.dxo.com \"macOS 27\" \"Nik Collection 8\"",
+          "site:support.dxo.com \"Golden Gate\" \"Nik Collection 8\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Nikon NX Studio",
+      "vendor": "Nikon",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "nij.nikon.com",
+        "downloadcenter.nikonimglib.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "NX Studio"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "support_news",
+          "label": "Nikon support news",
+          "url": "https://nij.nikon.com/news/support/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "os_compatibility",
+          "label": "Nikon macOS Golden Gate announcement (2026-09-17)",
+          "url": "https://nij.nikon.com/news/support/2026/0917.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "product_page",
+          "label": "NX Studio ãã¸ãã¥ã¼ã¿ã¼",
+          "url": "https://nij.nikon.com/support/manual/digitutor/nx_studio.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 4,
+          "type": "support_news",
+          "label": "macOS Tahoeå¯¾å¿ã«ã¤ãã¦ã®ãæ¡å",
+          "url": "https://nij.nikon.com/news/support/2025/0917_02.html",
+          "verification": "verified",
+          "note": "éå»OSçãæ´æ°å±¥æ­´ããåèã«ç¢ºèªã"
+        },
+        {
+          "priority": 9,
+          "type": "downloads",
+          "label": "Nikon Download Center",
+          "url": "https://downloadcenter.nikonimglib.com/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:nij.nikon.com \"macOS Golden Gate\" \"NX Studio\"",
+          "site:downloadcenter.nikonimglib.com \"NX Studio\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked."
+      }
+    },
+    {
+      "name": "Nikon NX Tether",
+      "vendor": "Nikon",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "nij.nikon.com",
+        "downloadcenter.nikonimglib.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "NX Tether"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "support_news",
+          "label": "Nikon support news",
+          "url": "https://nij.nikon.com/news/support/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "os_compatibility",
+          "label": "Nikon macOS Golden Gate announcement (2026-09-17)",
+          "url": "https://nij.nikon.com/news/support/2026/0917.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "product_page",
+          "label": "NX Tether ãã¸ãã¥ã¼ã¿ã¼",
+          "url": "https://nij.nikon.com/support/manual/digitutor/nx_tether.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 4,
+          "type": "support_news",
+          "label": "NX Tether ææ°çãã¦ã³ã­ã¼ãéå§æ¡å",
+          "url": "https://nij.nikon.com/news/support/2026/0317_02.html",
+          "verification": "verified",
+          "note": "ãã¼ã¸ã§ã³ååç¢ºèªç¨ã"
+        },
+        {
+          "priority": 9,
+          "type": "downloads",
+          "label": "Nikon Download Center",
+          "url": "https://downloadcenter.nikonimglib.com/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:nij.nikon.com \"macOS Golden Gate\" \"NX Tether\"",
+          "site:downloadcenter.nikonimglib.com \"NX Tether\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked."
+      }
+    },
+    {
+      "name": "OnyX",
+      "vendor": "Titanium Software",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "titanium-software.fr"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "OnyX"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "os_compatibility",
+          "label": "OnyX official downloads by macOS version",
+          "url": "https://titanium-software.fr/en/onyx",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:titanium-software.fr \"macOS 27\" \"OnyX\"",
+          "site:titanium-software.fr \"Golden Gate\" \"OnyX\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Palette Master Element",
+      "vendor": "BenQ",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "benq.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Palette Master Element"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "Palette Master Element specifications",
+          "url": "https://www.benq.com/ja-jp/monitor/software/palette-master-element/spec.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "BenQ Palette Master Element support notice",
+          "url": "https://www.benq.com/ja-jp/support/downloads-faq/faq/product/application/monitor-faq-kn-00093.html",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:benq.com \"macOS 27\" \"Palette Master Element\"",
+          "site:benq.com \"Golden Gate\" \"Palette Master Element\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "PortraitPro Studio",
+      "vendor": "Anthropics",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "anthropics.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "PortraitPro Studio"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "support_news",
+          "label": "PortraitPro support",
+          "url": "https://www.anthropics.com/support/portraitpro/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "product_page",
+          "label": "PortraitPro FAQ",
+          "url": "https://www.anthropics.com/portraitpro/faq/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:anthropics.com \"macOS 27\" \"PortraitPro Studio\"",
+          "site:anthropics.com \"Golden Gate\" \"PortraitPro Studio\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Processes Monitor",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Processes Monitor"
+      ],
+      "sources": [],
+      "fallback": {
+        "mode": "identity_discovery_only",
+        "queries": [
+          "\"Processes Monitor\" \"macOS 27\"",
+          "\"Processes Monitor\" \"Golden Gate\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "QLMarkdown",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [
+        "github.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "QLMarkdown"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "official_repo",
+          "label": "sbarex/QLMarkdown candidate",
+          "url": "https://github.com/sbarex/QLMarkdown",
+          "verification": "candidate",
+          "note": "Current Homebrew cask commonly points here; confirm installed bundle identifier."
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "QLMarkdown issues",
+          "url": "https://github.com/sbarex/QLMarkdown/issues",
+          "verification": "candidate"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:github.com \"macOS 27\" \"QLMarkdown\"",
+          "site:github.com \"Golden Gate\" \"QLMarkdown\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "QLMedia",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "apps.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "QLMedia"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "app_store",
+          "label": "QLMedia on Mac App Store",
+          "url": "https://apps.apple.com/jp/app/qlmedia/id1667620638?mt=12",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:apps.apple.com \"macOS 27\" \"QLMedia\"",
+          "site:apps.apple.com \"Golden Gate\" \"QLMedia\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "QuickLook Video",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "github.com",
+        "apps.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "QuickLook Video"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "official_repo",
+          "label": "QuickLook Video repository",
+          "url": "https://github.com/Marginal/QuickLookVideo",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "QuickLook Video getting started",
+          "url": "https://github.com/Marginal/QuickLookVideo/wiki/Getting%20Started",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "app_store",
+          "label": "QuickLook Video on Mac App Store",
+          "url": "https://apps.apple.com/jp/app/quicklook-video/id6759566961?mt=12",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:github.com \"macOS 27\" \"QuickLook Video\"",
+          "site:github.com \"Golden Gate\" \"QuickLook Video\"",
+          "site:apps.apple.com \"macOS 27\" \"QuickLook Video\"",
+          "site:apps.apple.com \"Golden Gate\" \"QuickLook Video\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Raspberry Pi Imager",
+      "vendor": "Raspberry Pi",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "raspberrypi.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Raspberry Pi Imager"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "downloads",
+          "label": "Raspberry Pi Imager",
+          "url": "https://www.raspberrypi.com/software/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Raspberry Pi getting started docs",
+          "url": "https://www.raspberrypi.com/documentation/computers/getting-started.html",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:raspberrypi.com \"macOS 27\" \"Raspberry Pi Imager\"",
+          "site:raspberrypi.com \"Golden Gate\" \"Raspberry Pi Imager\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Retouch4me Clean Backdrop",
+      "vendor": "Retouch4me",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "retouch4.me"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Retouch4me Clean Backdrop"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "Retouch4me Clean Backdrop",
+          "url": "https://retouch4.me/ja/cleanbackdrop",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Retouch4me tutorials/support",
+          "url": "https://retouch4.me/tutorials",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:retouch4.me \"macOS 27\" \"Retouch4me Clean Backdrop\"",
+          "site:retouch4.me \"Golden Gate\" \"Retouch4me Clean Backdrop\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "scaler",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [
+        "apps.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "scaler"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "app_store",
+          "label": "Scaler Bandwidth Monitor on Mac App Store",
+          "url": "https://apps.apple.com/jp/app/scaler-bandwidth-monitor/id1612708557",
+          "verification": "candidate",
+          "note": "Likely identity from app name; confirm bundle identity."
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:apps.apple.com \"macOS 27\" \"scaler\"",
+          "site:apps.apple.com \"Golden Gate\" \"scaler\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "SF Symbols",
+      "vendor": "Apple",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "developer.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "SF Symbols"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "Apple SF Symbols",
+          "url": "https://developer.apple.com/sf-symbols/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Apple design resources",
+          "url": "https://developer.apple.com/design/resources/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:developer.apple.com \"macOS 27\" \"SF Symbols\"",
+          "site:developer.apple.com \"Golden Gate\" \"SF Symbols\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "ShutterSnitch",
+      "vendor": "2ndNature",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "apps.apple.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "ShutterSnitch"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "app_store",
+          "label": "ShutterSnitch on App Store",
+          "url": "https://apps.apple.com/jp/app/shuttersnitch/id364176211",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:apps.apple.com \"macOS 27\" \"ShutterSnitch\"",
+          "site:apps.apple.com \"Golden Gate\" \"ShutterSnitch\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Sloth",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "github.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Sloth"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "official_repo",
+          "label": "Sloth official repository",
+          "url": "https://github.com/sveinbjornt/Sloth",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "release_notes",
+          "label": "Sloth changelog",
+          "url": "https://github.com/sveinbjornt/Sloth/blob/master/CHANGES.md",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:github.com \"macOS 27\" \"Sloth\"",
+          "site:github.com \"Golden Gate\" \"Sloth\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "SnippetsLab",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "renfei.org"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "SnippetsLab"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "SnippetsLab official site",
+          "url": "https://www.renfei.org/snippets-lab/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "SnippetsLab FAQ",
+          "url": "https://www.renfei.org/snippets-lab/manual/mac/faq.html",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:renfei.org \"macOS 27\" \"SnippetsLab\"",
+          "site:renfei.org \"Golden Gate\" \"SnippetsLab\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "SteerMouse",
+      "vendor": "Plentycom",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "plentycom.jp"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "SteerMouse"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "downloads",
+          "label": "SteerMouse downloads",
+          "url": "https://www.plentycom.jp/en/steermouse/download.php",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "product_page",
+          "label": "SteerMouse",
+          "url": "https://www.plentycom.jp/en/steermouse/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:plentycom.jp \"macOS 27\" \"SteerMouse\"",
+          "site:plentycom.jp \"Golden Gate\" \"SteerMouse\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Swift Shift",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "swiftshift.app",
+        "github.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Swift Shift"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "Swift Shift official site",
+          "url": "https://www.swiftshift.app/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "official_repo",
+          "label": "SwiftShift official repository",
+          "url": "https://github.com/pablopunk/SwiftShift",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:swiftshift.app \"macOS 27\" \"Swift Shift\"",
+          "site:swiftshift.app \"Golden Gate\" \"Swift Shift\"",
+          "site:github.com \"macOS 27\" \"Swift Shift\"",
+          "site:github.com \"Golden Gate\" \"Swift Shift\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "The Unarchiver",
+      "vendor": "MacPaw",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "macpaw.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "The Unarchiver"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "support_news",
+          "label": "The Unarchiver support",
+          "url": "https://macpaw.com/support/the-unarchiver",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "product_page",
+          "label": "The Unarchiver",
+          "url": "https://macpaw.com/the-unarchiver",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:macpaw.com \"macOS 27\" \"The Unarchiver\"",
+          "site:macpaw.com \"Golden Gate\" \"The Unarchiver\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Thunderbird",
+      "vendor": "Mozilla",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "thunderbird.net",
+        "support.mozilla.org"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Thunderbird"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "Thunderbird system requirements",
+          "url": "https://www.thunderbird.net/en-US/thunderbird/138.0/system-requirements/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Thunderbird help",
+          "url": "https://support.mozilla.org/products/thunderbird",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "downloads",
+          "label": "Thunderbird official download sources",
+          "url": "https://support.mozilla.org/en-US/kb/well-known-sources-for-downloading-thunderbird",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:thunderbird.net \"macOS 27\" \"Thunderbird\"",
+          "site:thunderbird.net \"Golden Gate\" \"Thunderbird\"",
+          "site:support.mozilla.org \"macOS 27\" \"Thunderbird\"",
+          "site:support.mozilla.org \"Golden Gate\" \"Thunderbird\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "TinkerTool",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "bresink.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "TinkerTool"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "Marcel Bresink products",
+          "url": "https://www.bresink.com/products.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Marcel Bresink latest news",
+          "url": "https://www.bresink.com/Blog/blog-latest.php",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:bresink.com \"macOS 27\" \"TinkerTool\"",
+          "site:bresink.com \"Golden Gate\" \"TinkerTool\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Topaz Photo Apps",
+      "vendor": "Topaz Labs",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "docs.topazlabs.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Topaz Photo Apps"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "Topaz Photo system requirements",
+          "url": "https://docs.topazlabs.com/topaz-photo/system-requirements",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "system_requirements",
+          "label": "Topaz Gigapixel system requirements",
+          "url": "https://docs.topazlabs.com/topaz-gigapixel/system-requirements",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "support_news",
+          "label": "Topaz Labs docs",
+          "url": "https://docs.topazlabs.com/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:docs.topazlabs.com \"macOS 27\" \"Topaz Photo Apps\"",
+          "site:docs.topazlabs.com \"Golden Gate\" \"Topaz Photo Apps\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Transmit",
+      "vendor": "Panic",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "help.panic.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Transmit"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "release_notes",
+          "label": "Transmit 5 release notes",
+          "url": "https://help.panic.com/releasenotes/transmit5/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "release_notes",
+          "label": "Transmit 6 release notes",
+          "url": "https://help.panic.com/releasenotes/transmit6/",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "support_news",
+          "label": "Panic Transmit support",
+          "url": "https://help.panic.com/transmit/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:help.panic.com \"macOS 27\" \"Transmit\"",
+          "site:help.panic.com \"Golden Gate\" \"Transmit\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "unpkg",
+      "vendor": "",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "timdoug.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "unpkg"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "product_page",
+          "label": "unpkg official site",
+          "url": "https://www.timdoug.com/unpkg/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:timdoug.com \"macOS 27\" \"unpkg\"",
+          "site:timdoug.com \"Golden Gate\" \"unpkg\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Visual Studio Code",
+      "vendor": "Microsoft",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "code.visualstudio.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Visual Studio Code"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "VS Code requirements",
+          "url": "https://code.visualstudio.com/Docs/supporting/requirements",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "VS Code macOS setup",
+          "url": "https://code.visualstudio.com/docs/setup/mac",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "release_notes",
+          "label": "VS Code updates",
+          "url": "https://code.visualstudio.com/updates",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:code.visualstudio.com \"macOS 27\" \"Visual Studio Code\"",
+          "site:code.visualstudio.com \"Golden Gate\" \"Visual Studio Code\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "VLC",
+      "vendor": "VideoLAN",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "videolan.org"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "VLC"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "downloads",
+          "label": "VLC for macOS",
+          "url": "https://www.videolan.org/vlc/download-macosx.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "VideoLAN news",
+          "url": "https://www.videolan.org/news.html",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:videolan.org \"macOS 27\" \"VLC\"",
+          "site:videolan.org \"Golden Gate\" \"VLC\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Wacom Tablet",
+      "vendor": "Wacom",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "wacom.com",
+        "support.wacom.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Wacom Tablet"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "downloads",
+          "label": "Wacom drivers",
+          "url": "https://www.wacom.com/en-us/support/product-support/drivers",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "Wacom support",
+          "url": "https://support.wacom.com/",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:wacom.com \"macOS 27\" \"Wacom Tablet\"",
+          "site:wacom.com \"Golden Gate\" \"Wacom Tablet\"",
+          "site:support.wacom.com \"macOS 27\" \"Wacom Tablet\"",
+          "site:support.wacom.com \"Golden Gate\" \"Wacom Tablet\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "WiFi Signal Strength Explorer",
+      "vendor": "",
+      "identity_status": "needs_identity_confirmation",
+      "automation_allowed": false,
+      "official_domains": [],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "WiFi Signal Strength Explorer"
+      ],
+      "sources": [],
+      "fallback": {
+        "mode": "identity_discovery_only",
+        "queries": [
+          "\"WiFi Signal Strength Explorer\" \"macOS 27\"",
+          "\"WiFi Signal Strength Explorer\" \"Golden Gate\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    },
+    {
+      "name": "Wine Crossover",
+      "vendor": "CodeWeavers",
+      "identity_status": "verified",
+      "automation_allowed": true,
+      "official_domains": [
+        "codeweavers.com",
+        "support.codeweavers.com"
+      ],
+      "search_terms": [
+        "macOS 27",
+        "macOS Golden Gate",
+        "Golden Gate 27",
+        "Wine Crossover"
+      ],
+      "sources": [
+        {
+          "priority": 1,
+          "type": "system_requirements",
+          "label": "CrossOver product/system requirements",
+          "url": "https://www.codeweavers.com/crossover",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
+          "type": "support_news",
+          "label": "CrossOver Mac user guide",
+          "url": "https://support.codeweavers.com/en_US/crossover-mac-user-guide",
+          "verification": "verified"
+        },
+        {
+          "priority": 3,
+          "type": "support_news",
+          "label": "CrossOver 27 roadmap article",
+          "url": "https://www.codeweavers.com/blog/mjohnson/2026/06/11/whats-in-and-whats-out-for-crossover-27",
+          "verification": "verified"
+        }
+      ],
+      "fallback": {
+        "mode": "official_domain_only",
+        "queries": [
+          "site:codeweavers.com \"macOS 27\" \"Wine Crossover\"",
+          "site:codeweavers.com \"Golden Gate\" \"Wine Crossover\"",
+          "site:support.codeweavers.com \"macOS 27\" \"Wine Crossover\"",
+          "site:support.codeweavers.com \"Golden Gate\" \"Wine Crossover\""
+        ],
+        "rule": "Use fallback only after all registered sources were checked. If identity_status is needs_identity_confirmation, do not issue a compatibility verdict until identity is confirmed."
+      }
+    }
+  ],
+  "watchlist": []
 }
