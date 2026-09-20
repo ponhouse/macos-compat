@@ -17,10 +17,31 @@ const escapeHtml = (value = "") => String(value).replace(/[&<>"']/g, (char) => (
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
 }[char]));
 
-async function loadJson(path) {
-  const response = await fetch(path, { cache: "no-store" });
-  if (!response.ok) throw new Error(`${path} を読み込めませんでした (${response.status})`);
-  return response.json();
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+async function loadJson(path, attempts = 3) {
+  let lastError;
+
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      const separator = path.includes("?") ? "&" : "?";
+      const response = await fetch(
+        `${path}${separator}_=${Date.now()}-${attempt}`,
+        { cache: "no-store" }
+      );
+
+      if (!response.ok) {
+        throw new Error(`${path} を読み込めませんでした (${response.status})`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      lastError = error;
+      if (attempt < attempts) await sleep(700 * attempt);
+    }
+  }
+
+  throw lastError;
 }
 
 function renderApps(apps) {
@@ -46,37 +67,55 @@ function renderApps(apps) {
   byId("state").textContent = `${filtered.length}件を表示中`;
 }
 
+function normalizeSources(sourceData) {
+  if (Array.isArray(sourceData?.sources)) return sourceData.sources;
+
+  if (Array.isArray(sourceData?.products)) {
+    return sourceData.products.flatMap((product) =>
+      (product.sources || []).map((source) => ({
+        title: `${product.name}: ${source.label || source.type || "公式情報"}`,
+        url: source.url,
+        checked_at: product.checked_at || ""
+      }))
+    );
+  }
+
+  return [];
+}
+
+function renderSources(sources) {
+  byId("sources-list").innerHTML = sources.length
+    ? sources.map((source) => `<li><a href="${escapeHtml(source.url || "#")}">${escapeHtml(source.title || source.url || "確認元")}</a><span>${escapeHtml(source.checked_at || "")}</span></li>`).join("")
+    : '<li class="empty">確認元はまだ登録されていません。</li>';
+}
+
 async function init() {
+  let appData;
+
   try {
-    const [appData, sourceData] = await Promise.all([
-      loadJson("apps.json"),
-      loadJson("research_sources.json")
-    ]);
-    const apps = Array.isArray(appData.apps) ? appData.apps : [];
-    const sources = Array.isArray(sourceData.sources)
-      ? sourceData.sources
-      : Array.isArray(sourceData.products)
-        ? sourceData.products.flatMap((product) =>
-            (product.sources || []).map((source) => ({
-              title: `${product.name}: ${source.label || source.type || "公式情報"}`,
-              url: source.url,
-              checked_at: product.checked_at || ""
-            }))
-          )
-        : [];
-
-    byId("updated-at").textContent = appData.meta?.updated_at || appData.updated_at || "—";
-    byId("total-count").textContent = apps.length;
-    byId("checked-count").textContent = apps.filter((app) => ["compatible", "incompatible"].includes(normalizeStatus(app.status))).length;
-    byId("attention-count").textContent = apps.filter((app) => ["warning", "unknown"].includes(normalizeStatus(app.status))).length;
-    byId("sources-list").innerHTML = sources.length
-      ? sources.map((source) => `<li><a href="${escapeHtml(source.url || "#")}">${escapeHtml(source.title || source.url || "確認元")}</a><span>${escapeHtml(source.checked_at || "")}</span></li>`).join("")
-      : '<li class="empty">確認元はまだ登録されていません。</li>';
-
-    byId("search").addEventListener("input", () => renderApps(apps));
-    renderApps(apps);
+    appData = await loadJson("apps.json");
   } catch (error) {
-    byId("state").textContent = error.message;
+    byId("state").textContent = `アプリデータの読み込みに失敗しました: ${error.message}`;
+    byId("apps-body").innerHTML = '<tr><td colspan="5" class="empty">データを読み込めませんでした。少し待って再読み込みしてください。</td></tr>';
+    return;
+  }
+
+  const apps = Array.isArray(appData.apps) ? appData.apps : [];
+
+  byId("updated-at").textContent = appData.meta?.updated_at || appData.updated_at || "—";
+  byId("total-count").textContent = apps.length;
+  byId("checked-count").textContent = apps.filter((app) => ["compatible", "incompatible"].includes(normalizeStatus(app.status))).length;
+  byId("attention-count").textContent = apps.filter((app) => ["warning", "unknown"].includes(normalizeStatus(app.status))).length;
+
+  byId("search").addEventListener("input", () => renderApps(apps));
+  renderApps(apps);
+
+  try {
+    const sourceData = await loadJson("research_sources.json");
+    renderSources(normalizeSources(sourceData));
+  } catch (error) {
+    byId("sources-list").innerHTML =
+      `<li class="empty">確認元データだけ読み込めませんでした。アプリ一覧には影響ありません。</li>`;
   }
 }
 
