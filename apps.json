@@ -3,7 +3,7 @@
     "title": "macOS 27 互換性情報",
     "os": "macOS 27",
     "schema_version": 2,
-    "updated_at": "2026-09-18T14:00:00+09:00",
+    "updated_at": "2026-09-21T00:03:00+09:00",
     "product_count": 91,
     "notice": "公式情報を中心に調査した公開用データです。ローカルパス、インストール版、内部調査メモは含みません。",
     "status_definitions": {
@@ -14,9 +14,9 @@
     },
     "status_counts": {
       "compatible": 2,
-      "warning": 7,
+      "warning": 8,
       "incompatible": 2,
-      "unknown": 80
+      "unknown": 79
     }
   },
   "apps": [
@@ -342,16 +342,25 @@
     {
       "name": "Epson Software",
       "vendor": "Epson",
-      "status": "unknown",
-      "checked_at": "2026-09-16",
-      "summary": "Epson Scan 2の公式更新履歴ではmacOS 26 Tahoe対応まで確認。macOS 27は未確認。",
+      "status": "warning",
+      "checked_at": "2026-09-21",
+      "summary": "エプソン公式がmacOS 27 Golden Gate対応表を公開。Epson Scan 2やEpson Software Updaterなどは対応する一方、Easy Photo Scanなど一部ソフトは非対応。",
       "issues": [
-        "macOS 27対応版の公開待ち"
+        "ソフトごとにmacOS 27対応状況が異なる",
+        "Easy Photo ScanはmacOS 27非対応"
       ],
       "sources": [
         {
-          "label": "Epson Scan 2 サポート例",
-          "url": "https://www.epson.jp/dl_soft/readme/43903.htm"
+          "label": "Epson インクジェット ソフトウェア macOS 27 Golden Gate対応表",
+          "url": "https://www.epson.jp/support/taiou/os/list/ij_soft_mac_goldengate.htm"
+        },
+        {
+          "label": "Epson スキャナー ソフトウェア macOS 27 Golden Gate対応表",
+          "url": "https://www.epson.jp/support/taiou/os/list/sc_soft_mac_goldengate.htm"
+        },
+        {
+          "label": "Epson Scan 2 macOS Golden Gate対応版",
+          "url": "https://www.epson.jp/dl_soft/readme/46129.htm"
         }
       ]
     },
