@@ -3,7 +3,7 @@
     "title": "macOS 27 互換性情報",
     "os": "macOS 27",
     "schema_version": 2,
-    "updated_at": "2026-09-21T00:03:00+09:00",
+    "updated_at": "2026-09-21T08:00:54+09:00",
     "product_count": 91,
     "notice": "公式情報を中心に調査した公開用データです。ローカルパス、インストール版、内部調査メモは含みません。",
     "status_definitions": {
@@ -176,10 +176,10 @@
       "name": "BetterTouchTool",
       "vendor": "folivora.AI",
       "status": "warning",
-      "checked_at": "2026-09-16",
-      "summary": "開発者がmacOS 27で動作確認し、6.588以降でmacOS 27 betaの初期対応を明記。",
+      "checked_at": "2026-09-21",
+      "summary": "BetterTouchTool 6.588でmacOS 27 betaの初期対応を開始し、最新版6.816でもmacOS 27 Golden Gate向け修正を継続。",
       "issues": [
-        "一部Space切替などでmacOS 27の挙動変更影響あり"
+        "最新版でもmacOS 27向け修正が継続しており、全面的な正式対応の明記は未確認"
       ],
       "sources": [
         {
