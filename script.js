@@ -44,6 +44,15 @@ async function loadJson(path, attempts = 3) {
   throw lastError;
 }
 
+async function loadJsonWithFallback(primary, fallback) {
+  try {
+    return await loadJson(primary);
+  } catch (primaryError) {
+    if (!fallback) throw primaryError;
+    return loadJson(fallback);
+  }
+}
+
 function renderApps(apps) {
   const body = byId("apps-body");
   const query = byId("search").value.trim().toLowerCase();
@@ -93,7 +102,10 @@ async function init() {
   let appData;
 
   try {
-    appData = await loadJson("apps.json");
+    appData = await loadJsonWithFallback(
+      "apps.json",
+      "https://raw.githubusercontent.com/ponhouse/macos-compat/main/apps.json"
+    );
   } catch (error) {
     byId("state").textContent = `アプリデータの読み込みに失敗しました: ${error.message}`;
     byId("apps-body").innerHTML = '<tr><td colspan="5" class="empty">データを読み込めませんでした。少し待って再読み込みしてください。</td></tr>';
@@ -111,7 +123,10 @@ async function init() {
   renderApps(apps);
 
   try {
-    const sourceData = await loadJson("research_sources.json");
+    const sourceData = await loadJsonWithFallback(
+      "research_sources.json",
+      "https://raw.githubusercontent.com/ponhouse/macos-compat/main/research_sources.json"
+    );
     renderSources(normalizeSources(sourceData));
   } catch (error) {
     byId("sources-list").innerHTML =
