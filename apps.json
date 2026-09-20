@@ -1,15 +1,997 @@
 {
-  "schema_version": 1,
-  "target": {
-    "platform": "macOS",
-    "version": "27"
+  "meta": {
+    "title": "macOS 27 互換性情報",
+    "os": "macOS 27",
+    "schema_version": 2,
+    "updated_at": "2026-09-18T14:00:00+09:00",
+    "product_count": 91,
+    "notice": "公式情報を中心に調査した公開用データです。ローカルパス、インストール版、内部調査メモは含みません。",
+    "status_definitions": {
+      "compatible": "macOS 27対応を公式情報で確認済み",
+      "warning": "動作・対応情報はあるが注意点や確認残りあり",
+      "incompatible": "現時点でmacOS 27が公式サポート／推奨環境外",
+      "unknown": "macOS 27について公式確認できず"
+    },
+    "status_counts": {
+      "compatible": 2,
+      "warning": 7,
+      "incompatible": 2,
+      "unknown": 80
+    }
   },
-  "updated_at": "2026-09-20",
-  "status_definitions": {
-    "compatible": "macOS 27で動作確認済み",
-    "warning": "一部機能・環境で注意が必要",
-    "unknown": "まだ確認できていない",
-    "incompatible": "macOS 27では利用できない、または重大な問題を確認"
-  },
-  "apps": []
+  "apps": [
+    {
+      "name": "1Password",
+      "vendor": "1Password",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "1Password 8の公式要件はmacOS 12 Monterey以降。macOS 27個別の明記は未確認。",
+      "issues": [],
+      "sources": [
+        {
+          "label": "1Password System Requirements",
+          "url": "https://support.1password.com/system-requirements/"
+        }
+      ]
+    },
+    {
+      "name": "1Password for Safari",
+      "vendor": "1Password",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Adobe Camera Raw / DNG Tools",
+      "vendor": "Adobe",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "Camera Rawの現行要件はmacOS Sonoma以降だが、macOS 27個別の正式対応記載は未確認。",
+      "issues": [
+        "macOS 27個別の対応確認待ち"
+      ],
+      "sources": [
+        {
+          "label": "Camera Raw 必要システム構成",
+          "url": "https://helpx.adobe.com/jp/camera-raw/desktop/get-started/system-requirements/system-requirements.html"
+        }
+      ]
+    },
+    {
+      "name": "Adobe Lightroom Classic",
+      "vendor": "Adobe",
+      "status": "warning",
+      "checked_at": "2026-09-16",
+      "summary": "Lightroom Classic 15.xはmacOS 26 Tahoe対応だが、macOS 27の正式対応記載は未確認。",
+      "issues": [
+        "macOS 27正式対応の明記待ち",
+        "macOS 26の一部Apple Silicon環境でAIノイズ除去アーティファクトの既知問題"
+      ],
+      "sources": [
+        {
+          "label": "Adobe macOS互換性",
+          "url": "https://helpx.adobe.com/jp/download-install/apps/system-requirements/apps-compatible-macos.html"
+        },
+        {
+          "label": "Lightroom Classic 既知の問題",
+          "url": "https://helpx.adobe.com/jp/lightroom-classic/desktop/troubleshooting/known-issues.html"
+        }
+      ]
+    },
+    {
+      "name": "Adobe Photoshop",
+      "vendor": "Adobe",
+      "status": "warning",
+      "checked_at": "2026-09-16",
+      "summary": "Adobeの現行macOS互換性表はmacOS 26 Tahoeまで。macOS 27の正式対応記載は未確認。",
+      "issues": [
+        "macOS 27正式対応の明記待ち"
+      ],
+      "sources": [
+        {
+          "label": "Adobe macOS互換性",
+          "url": "https://helpx.adobe.com/jp/download-install/apps/system-requirements/apps-compatible-macos.html"
+        },
+        {
+          "label": "Photoshop 技術要件",
+          "url": "https://helpx.adobe.com/jp/photoshop/desktop/get-started/technical-requirements-installation/adobe-photoshop-on-desktop-technical-requirements.html"
+        }
+      ]
+    },
+    {
+      "name": "Amazon Kindle",
+      "vendor": "Amazon",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "AmorphousDiskMark",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Anaconda-Navigator",
+      "vendor": "Anaconda",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "AppCleaner",
+      "vendor": "FreeMacSoft",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Apple iWork",
+      "vendor": "Apple",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Apple Media / Browser",
+      "vendor": "Apple",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "BatChmod",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "battery",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "BetterTouchTool",
+      "vendor": "folivora.AI",
+      "status": "warning",
+      "checked_at": "2026-09-16",
+      "summary": "開発者がmacOS 27で動作確認し、6.588以降でmacOS 27 betaの初期対応を明記。",
+      "issues": [
+        "一部Space切替などでmacOS 27の挙動変更影響あり"
+      ],
+      "sources": [
+        {
+          "label": "BetterTouchTool Release Notes",
+          "url": "https://updates.folivora.ai/bettertouchtool_release_notes.html"
+        },
+        {
+          "label": "macOS 27 discussion",
+          "url": "https://community.folivora.ai/t/macos-27-golden-gate/47224"
+        }
+      ]
+    },
+    {
+      "name": "Blackmagic Disk Speed Test",
+      "vendor": "Blackmagic Design",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "calibre",
+      "vendor": "calibre",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Chachatto",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "ChatGPT",
+      "vendor": "OpenAI",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "ChatGPT Classic",
+      "vendor": "OpenAI",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "ChronoSync",
+      "vendor": "Econ Technologies",
+      "status": "warning",
+      "checked_at": "2026-09-16",
+      "summary": "ChronoSync 12.0.3でmacOS 27 Golden Gate固有のクラッシュ／起動ボリューム判定問題を修正。",
+      "issues": [
+        "macOS 27関連修正あり。最新版12.0.3以上を推奨"
+      ],
+      "sources": [
+        {
+          "label": "ChronoSync 12.0.3 Release Notes",
+          "url": "https://www.econtechnologies.com/support/chronosync/notes.html"
+        }
+      ]
+    },
+    {
+      "name": "ComicViewer",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "CompareMerge",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Crontab Creator",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Cryptomator",
+      "vendor": "Skymatic",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "DevHub",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "DriveDx",
+      "vendor": "BinaryFruit",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Dropbox",
+      "vendor": "Dropbox",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "Dropbox公式の現行Mac要件はmacOS 11 Big Sur以降。macOS 27個別の記載は未確認。",
+      "issues": [],
+      "sources": [
+        {
+          "label": "Dropbox システム要件",
+          "url": "https://help.dropbox.com/ja-jp/installs/system-requirements"
+        }
+      ]
+    },
+    {
+      "name": "Duplicate File Finder",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Encrypto",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Epson Software",
+      "vendor": "Epson",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "Epson Scan 2の公式更新履歴ではmacOS 26 Tahoe対応まで確認。macOS 27は未確認。",
+      "issues": [
+        "macOS 27対応版の公開待ち"
+      ],
+      "sources": [
+        {
+          "label": "Epson Scan 2 サポート例",
+          "url": "https://www.epson.jp/dl_soft/readme/43903.htm"
+        }
+      ]
+    },
+    {
+      "name": "FileZilla",
+      "vendor": "FileZilla Project",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Find Any File",
+      "vendor": "Thomas Tempelmann",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Foldery",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Freee.DSig",
+      "vendor": "freee",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "GitHub Desktop",
+      "vendor": "GitHub",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Godox V2.0",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Google Chrome",
+      "vendor": "Google",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "ChromeのMac公式要件はmacOS 13 Ventura以降。macOS 27個別の明記は未確認。",
+      "issues": [],
+      "sources": [
+        {
+          "label": "Google Chrome システム要件",
+          "url": "https://support.google.com/chrome/answer/95346?hl=ja"
+        }
+      ]
+    },
+    {
+      "name": "Google Drive / Workspace",
+      "vendor": "Google",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "macOS 27の公式対応情報を初回検索では確認できず。継続調査。",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "GrandPerspective",
+      "vendor": "Eriban Software",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Hidden Bar",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Hot",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "HTTPie",
+      "vendor": "HTTPie",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "IINA",
+      "vendor": "IINA",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "ImageDiff",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "ImagenAI",
+      "vendor": "ImagenAI",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "macOS 27の公式対応情報を初回検索では確認できず。継続調査。",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "JPKI",
+      "vendor": "J-LIS",
+      "status": "incompatible",
+      "checked_at": "2026-09-16",
+      "summary": "JPKI利用者クライアントソフト Mac版の公式サポートOSはmacOS 26.3 TahoeとmacOS 15 Sequoia。macOS 27は未掲載。",
+      "issues": [
+        "macOS 27は現行サポートOS一覧に含まれていない"
+      ],
+      "sources": [
+        {
+          "label": "公的個人認証サービス Mac動作環境",
+          "url": "https://www.jpki.go.jp/download/mac.html"
+        }
+      ]
+    },
+    {
+      "name": "LanScan",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "LibreOffice",
+      "vendor": "The Document Foundation",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "LINE",
+      "vendor": "LINE Yahoo",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Lingon 3",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Lingon X",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "logioptionsplus",
+      "vendor": "Logitech",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "macOS 27の公式対応情報を初回検索では確認できず。継続調査。",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Macs Fan Control",
+      "vendor": "CrystalIDEA",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Magnet",
+      "vendor": "CrowdCafé",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "MAMP",
+      "vendor": "MAMP GmbH",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "MAMP 7.3でmacOS 26対応改善を確認。最新7.4系のリリースノートにmacOS 27明記は未確認。",
+      "issues": [
+        "macOS 27対応の明記待ち"
+      ],
+      "sources": [
+        {
+          "label": "MAMP Release Notes",
+          "url": "https://www.mamp.info/en/release-notes/mac/"
+        }
+      ]
+    },
+    {
+      "name": "MAMP PRO",
+      "vendor": "MAMP GmbH",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "MAMP PRO 7.4.3が現行。macOS 26対応改善は確認できるがmacOS 27明記は未確認。",
+      "issues": [
+        "macOS 27対応の明記待ち"
+      ],
+      "sources": [
+        {
+          "label": "MAMP & MAMP PRO Release Notes",
+          "url": "https://www.mamp.info/en/release-notes/mac/"
+        }
+      ]
+    },
+    {
+      "name": "MINI_KEYBOARD",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "MosaicTool",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "MynaPortalApp",
+      "vendor": "",
+      "status": "incompatible",
+      "checked_at": "2026-09-16",
+      "summary": "マイナポータル公式は掲載外OSを推奨環境外としており、現行Mac推奨OS一覧にmacOS 27はない。",
+      "issues": [
+        "macOS 27は現行の推奨環境外"
+      ],
+      "sources": [
+        {
+          "label": "マイナポータル 推奨環境",
+          "url": "https://myna.go.jp/html/dousakankyou.html"
+        }
+      ]
+    },
+    {
+      "name": "Native SQLite Manager",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Network Utility",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Nik Collection 8",
+      "vendor": "DxO",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "macOS 27の公式対応情報を初回検索では確認できず。継続調査。",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Nikon NX Studio",
+      "vendor": "Nikon",
+      "status": "warning",
+      "checked_at": "2026-09-18",
+      "summary": "ニコン公式は2026-09-17時点でmacOS Golden Gate対応を検証予定と案内。結果が出るまでは動作保証なし。",
+      "issues": [
+        "ニコン公式の検証結果が出るまでmacOS 27での動作保証なし"
+      ],
+      "sources": [
+        {
+          "label": "Nikon macOS Golden Gate対応についてのご案内",
+          "url": "https://nij.nikon.com/news/support/2026/0917.html"
+        },
+        {
+          "label": "Nikon サポート新着",
+          "url": "https://nij.nikon.com/news/support.html"
+        },
+        {
+          "label": "NX Studio デジチューター",
+          "url": "https://nij.nikon.com/support/manual/digitutor/nx_studio.html"
+        }
+      ]
+    },
+    {
+      "name": "Nikon NX Tether",
+      "vendor": "Nikon",
+      "status": "warning",
+      "checked_at": "2026-09-18",
+      "summary": "ニコン公式は2026-09-17時点でmacOS Golden Gate対応を検証予定と案内。結果が出るまでは動作保証なし。",
+      "issues": [
+        "ニコン公式の検証結果が出るまでmacOS 27での動作保証なし"
+      ],
+      "sources": [
+        {
+          "label": "Nikon macOS Golden Gate対応についてのご案内",
+          "url": "https://nij.nikon.com/news/support/2026/0917.html"
+        },
+        {
+          "label": "Nikon サポート新着",
+          "url": "https://nij.nikon.com/news/support.html"
+        },
+        {
+          "label": "NX Tether デジチューター",
+          "url": "https://nij.nikon.com/support/manual/digitutor/nx_tether.html"
+        }
+      ]
+    },
+    {
+      "name": "OnyX",
+      "vendor": "Titanium Software",
+      "status": "compatible",
+      "checked_at": "2026-09-16",
+      "summary": "OnyX 5.1.0がmacOS Golden Gate 27専用版として公式公開済み。",
+      "issues": [],
+      "sources": [
+        {
+          "label": "OnyX 公式",
+          "url": "https://titanium-software.fr/en/onyx"
+        }
+      ]
+    },
+    {
+      "name": "Palette Master Element",
+      "vendor": "BenQ",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "macOS 27の公式対応情報を初回検索では確認できず。継続調査。",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "PortraitPro Studio",
+      "vendor": "Anthropics",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "macOS 27の公式対応情報を初回検索では確認できず。継続調査。",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Processes Monitor",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "QLMarkdown",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "QLMedia",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "QuickLook Video",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Raspberry Pi Imager",
+      "vendor": "Raspberry Pi",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Retouch4me Clean Backdrop",
+      "vendor": "Retouch4me",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "macOS 27の公式対応情報を初回検索では確認できず。継続調査。",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "scaler",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "SF Symbols",
+      "vendor": "Apple",
+      "status": "compatible",
+      "checked_at": "2026-09-16",
+      "summary": "AppleがSF Symbols 27を公開。macOS 27で利用できる新シンボルを明示し、アプリ要件はmacOS Sonoma以降。",
+      "issues": [],
+      "sources": [
+        {
+          "label": "Apple SF Symbols",
+          "url": "https://developer.apple.com/sf-symbols/"
+        },
+        {
+          "label": "Apple Design Resources",
+          "url": "https://developer.apple.com/design/resources/"
+        }
+      ]
+    },
+    {
+      "name": "ShutterSnitch",
+      "vendor": "2ndNature",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Sloth",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "SnippetsLab",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "SteerMouse",
+      "vendor": "Plentycom",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Swift Shift",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "The Unarchiver",
+      "vendor": "MacPaw",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Thunderbird",
+      "vendor": "Mozilla",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "macOS 27の公式対応情報を初回検索では確認できず。継続調査。",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "TinkerTool",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Topaz Photo Apps",
+      "vendor": "Topaz Labs",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "macOS 27の公式対応情報を初回検索では確認できず。継続調査。",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Transmit",
+      "vendor": "Panic",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "unpkg",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Visual Studio Code",
+      "vendor": "Microsoft",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "VLC",
+      "vendor": "VideoLAN",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Wacom Tablet",
+      "vendor": "Wacom",
+      "status": "unknown",
+      "checked_at": "2026-09-16",
+      "summary": "macOS 27の公式対応情報を初回検索では確認できず。継続調査。",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "WiFi Signal Strength Explorer",
+      "vendor": "",
+      "status": "unknown",
+      "checked_at": "",
+      "summary": "未調査",
+      "issues": [],
+      "sources": []
+    },
+    {
+      "name": "Wine Crossover",
+      "vendor": "CodeWeavers",
+      "status": "warning",
+      "checked_at": "2026-09-16",
+      "summary": "現行CrossOver 26の互換表はmacOS 26 Tahoeまで。CrossOver 27はSonoma以降・Apple Silicon専用になる予定と公式告知。",
+      "issues": [
+        "現行互換表はmacOS 26まで",
+        "CrossOver 27はApple Silicon専用化予定"
+      ],
+      "sources": [
+        {
+          "label": "CrossOver System Requirements",
+          "url": "https://www.codeweavers.com/crossover"
+        },
+        {
+          "label": "CrossOver 27 予告",
+          "url": "https://www.codeweavers.com/blog/mjohnson/2026/06/11/whats-in-and-whats-out-for-crossover-27"
+        }
+      ]
+    }
+  ]
 }
