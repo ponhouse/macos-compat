@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "target": {
+    "platform": "macOS",
+    "version": "27"
+  },
+  "updated_at": "2026-09-20",
+  "status_definitions": {
+    "compatible": "macOS 27で動作確認済み",
+    "warning": "一部機能・環境で注意が必要",
+    "unknown": "まだ確認できていない",
+    "incompatible": "macOS 27では利用できない、または重大な問題を確認"
+  },
+  "apps": []
+}
