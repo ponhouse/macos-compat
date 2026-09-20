@@ -694,14 +694,14 @@
         {
           "priority": 1,
           "type": "product_page",
-          "label": "ã¡ãã¡ãã£ã¨ãªãã¼ãã¼ support",
+          "label": "ちゃちゃっとリネーマー support",
           "url": "https://indigovillage.jp/chachatto/",
           "verification": "verified"
         },
         {
           "priority": 2,
           "type": "app_store",
-          "label": "ã¡ãã¡ãã£ã¨ãªãã¼ãã¼ on Mac App Store",
+          "label": "ちゃちゃっとリネーマー on Mac App Store",
           "url": "https://apps.apple.com/jp/app/%E3%81%A1%E3%82%83%E3%81%A1%E3%82%83%E3%81%A3%E3%81%A8%E3%83%AA%E3%83%8D%E3%83%BC%E3%83%9E%E3%83%BC/id6462363612?mt=12",
           "verification": "verified"
         }
@@ -2122,7 +2122,7 @@
     },
     {
       "name": "Magnet",
-      "vendor": "CrowdCafÃ©",
+      "vendor": "CrowdCafé",
       "identity_status": "likely",
       "automation_allowed": true,
       "official_domains": [
@@ -2478,17 +2478,17 @@
         {
           "priority": 3,
           "type": "product_page",
-          "label": "NX Studio ãã¸ãã¥ã¼ã¿ã¼",
+          "label": "NX Studio デジチューター",
           "url": "https://nij.nikon.com/support/manual/digitutor/nx_studio.html",
           "verification": "verified"
         },
         {
           "priority": 4,
           "type": "support_news",
-          "label": "macOS Tahoeå¯¾å¿ã«ã¤ãã¦ã®ãæ¡å",
+          "label": "macOS Tahoe対応についてのご案内",
           "url": "https://nij.nikon.com/news/support/2025/0917_02.html",
           "verification": "verified",
-          "note": "éå»OSçãæ´æ°å±¥æ­´ããåèã«ç¢ºèªã"
+          "note": "過去OS版。更新履歴から参考に確認。"
         },
         {
           "priority": 9,
@@ -2540,17 +2540,17 @@
         {
           "priority": 3,
           "type": "product_page",
-          "label": "NX Tether ãã¸ãã¥ã¼ã¿ã¼",
+          "label": "NX Tether デジチューター",
           "url": "https://nij.nikon.com/support/manual/digitutor/nx_tether.html",
           "verification": "verified"
         },
         {
           "priority": 4,
           "type": "support_news",
-          "label": "NX Tether ææ°çãã¦ã³ã­ã¼ãéå§æ¡å",
+          "label": "NX Tether 最新版ダウンロード開始案内",
           "url": "https://nij.nikon.com/news/support/2026/0317_02.html",
           "verification": "verified",
-          "note": "ãã¼ã¸ã§ã³ååç¢ºèªç¨ã"
+          "note": "バージョン動向確認用。"
         },
         {
           "priority": 9,
