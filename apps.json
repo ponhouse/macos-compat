@@ -3,7 +3,7 @@
     "title": "macOS 27 互換性情報",
     "os": "macOS 27",
     "schema_version": 2,
-    "updated_at": "2026-09-21T08:00:54+09:00",
+    "updated_at": "2026-09-28T08:01:00+09:00",
     "product_count": 91,
     "notice": "公式情報を中心に調査した公開用データです。ローカルパス、インストール版、内部調査メモは含みません。",
     "status_definitions": {
@@ -13,10 +13,10 @@
       "unknown": "macOS 27について公式確認できず"
     },
     "status_counts": {
-      "compatible": 2,
-      "warning": 8,
+      "compatible": 3,
+      "warning": 9,
       "incompatible": 2,
-      "unknown": 79
+      "unknown": 77
     }
   },
   "apps": [
@@ -921,11 +921,22 @@
     {
       "name": "Topaz Photo Apps",
       "vendor": "Topaz Labs",
-      "status": "unknown",
-      "checked_at": "2026-09-16",
-      "summary": "macOS 27の公式対応情報を初回検索では確認できず。継続調査。",
-      "issues": [],
-      "sources": []
+      "status": "warning",
+      "checked_at": "2026-09-28",
+      "summary": "Topaz公式のTopaz Photo / Gigapixel必要システム構成はmacOS 27 Golden Gateに言及しているが、新しいOSのため互換性問題が発生する可能性があると注意喚起している。",
+      "issues": [
+        "Topaz公式がmacOS 27では互換性問題が発生する可能性があると注意喚起"
+      ],
+      "sources": [
+        {
+          "label": "Topaz Photo system requirements",
+          "url": "https://docs.topazlabs.com/topaz-photo/system-requirements"
+        },
+        {
+          "label": "Topaz Gigapixel system requirements",
+          "url": "https://docs.topazlabs.com/topaz-gigapixel/system-requirements"
+        }
+      ]
     },
     {
       "name": "Transmit",
@@ -966,11 +977,22 @@
     {
       "name": "Wacom Tablet",
       "vendor": "Wacom",
-      "status": "unknown",
-      "checked_at": "2026-09-16",
-      "summary": "macOS 27の公式対応情報を初回検索では確認できず。継続調査。",
-      "issues": [],
-      "sources": []
+      "status": "compatible",
+      "checked_at": "2026-09-28",
+      "summary": "Wacom公式は現在のドライバーがmacOS 27 Golden Gateをサポートすると明記。macOS 27互換にはドライバー6.4.14-2以降でサポートされるデバイスが必要。",
+      "issues": [
+        "macOS 27互換にはWacomドライバー6.4.14-2以降でサポートされるデバイスが必要"
+      ],
+      "sources": [
+        {
+          "label": "Wacom macOS 27 (Golden Gate) driver support",
+          "url": "https://support.wacom.com/hc/fr/articles/43537850453527-Pilote-Wacom-pour-macOS-27-Golden-Gate-%C3%A9tapes-d-installation-et-de-d%C3%A9pannage"
+        },
+        {
+          "label": "Wacom drivers",
+          "url": "https://www.wacom.com/en-us/support/product-support/drivers"
+        }
+      ]
     },
     {
       "name": "WiFi Signal Strength Explorer",
