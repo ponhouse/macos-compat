@@ -3517,13 +3517,20 @@
       "sources": [
         {
           "priority": 1,
+          "type": "os_compatibility",
+          "label": "Wacom macOS 27 (Golden Gate) driver support",
+          "url": "https://support.wacom.com/hc/fr/articles/43537850453527-Pilote-Wacom-pour-macOS-27-Golden-Gate-%C3%A9tapes-d-installation-et-de-d%C3%A9pannage",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
           "type": "downloads",
           "label": "Wacom drivers",
           "url": "https://www.wacom.com/en-us/support/product-support/drivers",
           "verification": "verified"
         },
         {
-          "priority": 2,
+          "priority": 3,
           "type": "support_news",
           "label": "Wacom support",
           "url": "https://support.wacom.com/",
