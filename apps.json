@@ -13,10 +13,10 @@
       "unknown": "macOS 27について公式確認できず"
     },
     "status_counts": {
-      "compatible": 4,
+      "compatible": 5,
       "warning": 9,
       "incompatible": 2,
-      "unknown": 76
+      "unknown": 75
     }
   },
   "apps": [
@@ -911,11 +911,16 @@
     {
       "name": "TinkerTool",
       "vendor": "",
-      "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
+      "status": "compatible",
+      "checked_at": "2026-10-05",
+      "summary": "TinkerTool 11.71（Build 260910）がmacOS 27 Golden Gateの完全対応を公式リリース履歴で明記。",
       "issues": [],
-      "sources": []
+      "sources": [
+        {
+          "label": "TinkerTool Version History",
+          "url": "https://www.bresink.com/osx/0TinkerTool/history.html"
+        }
+      ]
     },
     {
       "name": "Topaz Photo Apps",
