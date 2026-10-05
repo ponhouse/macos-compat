@@ -3,7 +3,7 @@
     "title": "macOS 27 互換性情報",
     "os": "macOS 27",
     "schema_version": 2,
-    "updated_at": "2026-09-28T08:01:00+09:00",
+    "updated_at": "2026-10-05T14:21:00+09:00",
     "product_count": 91,
     "notice": "公式情報を中心に調査した公開用データです。ローカルパス、インストール版、内部調査メモは含みません。",
     "status_definitions": {
@@ -13,10 +13,10 @@
       "unknown": "macOS 27について公式確認できず"
     },
     "status_counts": {
-      "compatible": 3,
+      "compatible": 4,
       "warning": 9,
       "incompatible": 2,
-      "unknown": 77
+      "unknown": 76
     }
   },
   "apps": [
@@ -83,12 +83,10 @@
     {
       "name": "Adobe Photoshop",
       "vendor": "Adobe",
-      "status": "warning",
-      "checked_at": "2026-09-16",
-      "summary": "Adobeの現行macOS互換性表はmacOS 26 Tahoeまで。macOS 27の正式対応記載は未確認。",
-      "issues": [
-        "macOS 27正式対応の明記待ち"
-      ],
+      "status": "compatible",
+      "checked_at": "2026-10-05",
+      "summary": "Adobe公式のmacOS互換性表（2026-10-01更新）で、Adobe Photoshop 27.xがmacOS 27 Golden Gate対応として明記された。",
+      "issues": [],
       "sources": [
         {
           "label": "Adobe macOS互換性",
@@ -611,11 +609,12 @@
     {
       "name": "MAMP PRO",
       "vendor": "MAMP GmbH",
-      "status": "unknown",
-      "checked_at": "2026-09-16",
-      "summary": "MAMP PRO 7.4.3が現行。macOS 26対応改善は確認できるがmacOS 27明記は未確認。",
+      "status": "warning",
+      "checked_at": "2026-10-05",
+      "summary": "MAMP PRO 7.4.4（2026-10-01）でmacOS 27上のPHPクラッシュを修正。macOS 27向けの実対応は確認できるが、全面的な正式対応の明記は未確認。",
       "issues": [
-        "macOS 27対応の明記待ち"
+        "macOS 27でのPHPクラッシュは7.4.4で修正済み",
+        "7.4.4はMAMP PROのアプリ内アップデートで提供"
       ],
       "sources": [
         {
