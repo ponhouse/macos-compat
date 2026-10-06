@@ -3,7 +3,7 @@
     "title": "macOS 27 互換性情報",
     "os": "macOS 27",
     "schema_version": 2,
-    "updated_at": "2026-10-05T14:21:00+09:00",
+    "updated_at": "2026-10-06T09:26:00+09:00",
     "product_count": 91,
     "notice": "公式情報を中心に調査した公開用データです。ローカルパス、インストール版、内部調査メモは含みません。",
     "status_definitions": {
@@ -13,10 +13,10 @@
       "unknown": "macOS 27について公式確認できず"
     },
     "status_counts": {
-      "compatible": 5,
-      "warning": 9,
+      "compatible": 7,
+      "warning": 11,
       "incompatible": 2,
-      "unknown": 75
+      "unknown": 71
     }
   },
   "apps": [
@@ -128,11 +128,22 @@
     {
       "name": "AppCleaner",
       "vendor": "FreeMacSoft",
-      "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
-      "issues": [],
-      "sources": []
+      "status": "compatible",
+      "checked_at": "2026-10-06",
+      "summary": "AppCleaner 3.7（2026-09-22）がmacOS 27 Golden Gate対応を公式リリースノートで明記。",
+      "issues": [
+        "一部ファイルの削除にはフルディスクアクセスが必要"
+      ],
+      "sources": [
+        {
+          "label": "AppCleaner release notes",
+          "url": "https://freemacsoft.net/appcleaner/releasenotes.html"
+        },
+        {
+          "label": "FreeMacSoft AppCleaner",
+          "url": "https://freemacsoft.net/appcleaner/"
+        }
+      ]
     },
     {
       "name": "Apple iWork",
@@ -566,11 +577,19 @@
     {
       "name": "logioptionsplus",
       "vendor": "Logitech",
-      "status": "unknown",
-      "checked_at": "2026-09-16",
-      "summary": "macOS 27の公式対応情報を初回検索では確認できず。継続調査。",
-      "issues": [],
-      "sources": []
+      "status": "warning",
+      "checked_at": "2026-10-06",
+      "summary": "Logi Options+ 2.7.970334でmacOS 27 Golden Gate固有の不具合修正を公式リリースノートで確認。最新版2.9.984725まで更新継続。",
+      "issues": [
+        "macOS 27でサムホイールによるデスクトップ切り替えとCasa Touchのジェスチャー不具合が2.7.970334で修正済み",
+        "macOS 27全面対応という明示表記は未確認"
+      ],
+      "sources": [
+        {
+          "label": "Logi Options+ Release Notes",
+          "url": "https://marketplace.logi.com/releasenotes/optionsplus/en"
+        }
+      ]
     },
     {
       "name": "Macs Fan Control",
@@ -866,20 +885,32 @@
     {
       "name": "SnippetsLab",
       "vendor": "",
-      "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
-      "issues": [],
-      "sources": []
+      "status": "warning",
+      "checked_at": "2026-10-06",
+      "summary": "SnippetsLab 2.7（2026-09-17）でmacOS 27 Golden Gateとの互換性改善を公式リリースノートで明記。",
+      "issues": [
+        "「互換性改善」の表記であり、全面的な正式対応の明記ではない"
+      ],
+      "sources": [
+        {
+          "label": "SnippetsLab 2.7 release notes",
+          "url": "https://www.renfei.org/snippets-lab/manual/mac/release-notes/macos-2.7.html"
+        }
+      ]
     },
     {
       "name": "SteerMouse",
       "vendor": "Plentycom",
-      "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
+      "status": "compatible",
+      "checked_at": "2026-10-06",
+      "summary": "SteerMouse 5.8がmacOS 27 Golden Gate対応を明記。macOS 12 Monterey以降が必要。",
       "issues": [],
-      "sources": []
+      "sources": [
+        {
+          "label": "SteerMouse downloads",
+          "url": "https://www.plentycom.jp/en/steermouse/download.php"
+        }
+      ]
     },
     {
       "name": "Swift Shift",
