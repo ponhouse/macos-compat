@@ -383,6 +383,13 @@
       "sources": [
         {
           "priority": 1,
+          "type": "release_notes",
+          "label": "AppCleaner release notes",
+          "url": "https://freemacsoft.net/appcleaner/releasenotes.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
           "type": "product_page",
           "label": "FreeMacSoft AppCleaner",
           "url": "https://freemacsoft.net/appcleaner/",
@@ -2046,7 +2053,8 @@
       "automation_allowed": true,
       "official_domains": [
         "logitech.com",
-        "support.logi.com"
+        "support.logi.com",
+        "marketplace.logi.com"
       ],
       "search_terms": [
         "macOS 27",
@@ -2057,13 +2065,20 @@
       "sources": [
         {
           "priority": 1,
+          "type": "release_notes",
+          "label": "Logi Options+ release notes",
+          "url": "https://marketplace.logi.com/releasenotes/optionsplus/en",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
           "type": "product_page",
           "label": "Logitech Options+",
           "url": "https://www.logitech.com/en-us/software/options.html",
           "verification": "verified"
         },
         {
-          "priority": 2,
+          "priority": 3,
           "type": "support_news",
           "label": "Logitech support",
           "url": "https://support.logi.com/",
@@ -3060,13 +3075,20 @@
       "sources": [
         {
           "priority": 1,
+          "type": "release_notes",
+          "label": "SnippetsLab release notes",
+          "url": "https://www.renfei.org/snippets-lab/manual/mac/release-notes/macos-2.7.html",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
           "type": "product_page",
           "label": "SnippetsLab official site",
           "url": "https://www.renfei.org/snippets-lab/",
           "verification": "verified"
         },
         {
-          "priority": 2,
+          "priority": 3,
           "type": "support_news",
           "label": "SnippetsLab FAQ",
           "url": "https://www.renfei.org/snippets-lab/manual/mac/faq.html",
