@@ -560,19 +560,33 @@
       "name": "Lingon 3",
       "vendor": "",
       "status": "unknown",
-      "checked_at": "",
+      "checked_at": "2026-10-06",
       "summary": "未調査",
-      "issues": [],
-      "sources": []
+      "issues": [
+        "参考: 現行のLingon 10 / Lingon Pro 10はmacOS 27 Golden Gate対応済み。ただし、この項目（旧バージョン）への対応可否は未確認。"
+      ],
+      "sources": [
+        {
+          "label": "Lingon official site",
+          "url": "https://www.peterborgapps.com/lingon/"
+        }
+      ]
     },
     {
       "name": "Lingon X",
       "vendor": "",
       "status": "unknown",
-      "checked_at": "",
+      "checked_at": "2026-10-06",
       "summary": "未調査",
-      "issues": [],
-      "sources": []
+      "issues": [
+        "参考: 現行のLingon 10 / Lingon Pro 10はmacOS 27 Golden Gate対応済み。ただし、この項目（旧バージョン）への対応可否は未確認。"
+      ],
+      "sources": [
+        {
+          "label": "Lingon official site",
+          "url": "https://www.peterborgapps.com/lingon/"
+        }
+      ]
     },
     {
       "name": "logioptionsplus",
