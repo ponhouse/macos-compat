@@ -3,7 +3,7 @@
     "title": "macOS 27 互換性情報",
     "os": "macOS 27",
     "schema_version": 2,
-    "updated_at": "2026-10-12T11:25:00+09:00",
+    "updated_at": "2026-10-19T08:04:00+09:00",
     "product_count": 91,
     "notice": "公式情報を中心に調査した公開用データです。ローカルパス、インストール版、内部調査メモは含みません。",
     "status_definitions": {
@@ -14,9 +14,9 @@
     },
     "status_counts": {
       "compatible": 8,
-      "warning": 11,
+      "warning": 12,
       "incompatible": 2,
-      "unknown": 70
+      "unknown": 69
     }
   },
   "apps": [
@@ -185,11 +185,11 @@
       "name": "BetterTouchTool",
       "vendor": "folivora.AI",
       "status": "warning",
-      "checked_at": "2026-10-12",
-      "summary": "公式リリースノートはBetterTouchTool 6.884を掲載。macOS 27のMission Control判定、メニューバーアイコン非表示、3本指ドラッグ互換性を修正し、macOS 27.2でのCPU高負荷も修正。全面的な正式対応宣言は未確認。",
+      "checked_at": "2026-10-19",
+      "summary": "BetterTouchTool公式リリースノートに6.943以降の変更を掲載。macOS 27でのMission Control起動遅延設定、macOS 27.2でのMission Control / App Exposé検出、macOS 27のメニューバーアイコン間隔調整などの改善を確認。全体の正式対応明記は未確認。",
       "issues": [
-        "macOS 27向け個別修正を継続中。全面的な正式対応の明記は未確認。",
-        "6.884の公開日は公式履歴上で確認できないため、前回チェック後の新規公開とは断定しない。"
+        "macOS 27の個別互換性修正が継続。完全対応の公式宣言は未確認。",
+        "6.943以降の公開日が明記されておらず、前回確認以降の公開とは断定できない。"
       ],
       "sources": [
         {
@@ -618,11 +618,23 @@
     {
       "name": "Macs Fan Control",
       "vendor": "CrystalIDEA",
-      "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
-      "issues": [],
-      "sources": []
+      "status": "warning",
+      "checked_at": "2026-10-19",
+      "summary": "Macs Fan Control 1.5.22（2026-10-13）でmacOS 27における温度センサーの欠落表示を修正。macOSのヘルパーツール接続エラーも修正。macOS 27での個別問題解消は確認できるが、全面的な正式対応の明記は未確認。",
+      "issues": [
+        "macOS 27で温度センサーが一部表示されない問題は1.5.22で修正済み。",
+        "macOS 27全機能・全機種の正式対応を示す明記は未確認。"
+      ],
+      "sources": [
+        {
+          "label": "Macs Fan Control 1.5.22 Release Notes",
+          "url": "https://crystalidea.com/macs-fan-control/release-notes"
+        },
+        {
+          "label": "Macs Fan Control Download",
+          "url": "https://crystalidea.com/macs-fan-control/download"
+        }
+      ]
     },
     {
       "name": "Magnet",
