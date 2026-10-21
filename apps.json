@@ -3,7 +3,7 @@
     "title": "macOS 27 互換性情報",
     "os": "macOS 27",
     "schema_version": 2,
-    "updated_at": "2026-10-19T08:04:00+09:00",
+    "updated_at": "2026-10-22T02:13:00+09:00",
     "product_count": 91,
     "notice": "公式情報を中心に調査した公開用データです。ローカルパス、インストール版、内部調査メモは含みません。",
     "status_definitions": {
@@ -13,23 +13,30 @@
       "unknown": "macOS 27について公式確認できず"
     },
     "status_counts": {
-      "compatible": 8,
-      "warning": 12,
-      "incompatible": 2,
-      "unknown": 69
+      "compatible": 9,
+      "warning": 15,
+      "incompatible": 3,
+      "unknown": 64
     }
   },
   "apps": [
     {
       "name": "1Password",
       "vendor": "1Password",
-      "status": "unknown",
-      "checked_at": "2026-09-16",
-      "summary": "1Password 8の公式要件はmacOS 12 Monterey以降。macOS 27個別の明記は未確認。",
-      "issues": [],
+      "status": "warning",
+      "checked_at": "2026-10-22",
+      "summary": "1Password for Mac 8.12.38（2026-09-29）でmacOS 27のApple Visual Intelligenceとのショートカット競合を避けるようQuick Access既定キーを変更。OS固有の調整は公式確認できたが、macOS 27全体の正式な対応明記は未確認。",
+      "issues": [
+        "macOS 27でのQuick Accessショートカット競合は8.12.38で対策済み",
+        "macOS 27全体の公式互換性表記は未確認"
+      ],
       "sources": [
         {
-          "label": "1Password System Requirements",
+          "label": "1Password 8.12.38 公式リリースノート",
+          "url": "https://releases.1password.com/mac/stable/8.12.38/"
+        },
+        {
+          "label": "1Password システム要件",
           "url": "https://support.1password.com/system-requirements/"
         }
       ]
@@ -47,12 +54,16 @@
       "name": "Adobe Camera Raw / DNG Tools",
       "vendor": "Adobe",
       "status": "unknown",
-      "checked_at": "2026-09-16",
-      "summary": "Camera Rawの現行要件はmacOS Sonoma以降だが、macOS 27個別の正式対応記載は未確認。",
+      "checked_at": "2026-10-22",
+      "summary": "Adobe公式の2026-10-21更新macOS 27対応表にCamera Rawは個別掲載されていない。Camera Rawの必要システム構成は参照できるが、macOS 27正式対応は未確認。DNG Toolsも個別に確認できていない。",
       "issues": [
-        "macOS 27個別の対応確認待ち"
+        "Camera Raw / DNG ToolsそれぞれのmacOS 27個別対応確認待ち"
       ],
       "sources": [
+        {
+          "label": "Adobe macOS互換性一覧（2026-10-21更新）",
+          "url": "https://helpx.adobe.com/jp/download-install/apps/system-requirements/apps-compatible-macos.html"
+        },
         {
           "label": "Camera Raw 必要システム構成",
           "url": "https://helpx.adobe.com/jp/camera-raw/desktop/get-started/system-requirements/system-requirements.html"
@@ -63,15 +74,15 @@
       "name": "Adobe Lightroom Classic",
       "vendor": "Adobe",
       "status": "warning",
-      "checked_at": "2026-09-16",
-      "summary": "Lightroom Classic 15.xはmacOS 26 Tahoe対応だが、macOS 27の正式対応記載は未確認。",
+      "checked_at": "2026-10-22",
+      "summary": "Adobe公式の2026-10-21更新macOS 27対応表にもLightroom Classicは未掲載。macOS 26 Tahoe向けには15.0以降が掲載されているが、macOS 27の正式対応は引き続き未確認。",
       "issues": [
         "macOS 27正式対応の明記待ち",
         "macOS 26の一部Apple Silicon環境でAIノイズ除去アーティファクトの既知問題"
       ],
       "sources": [
         {
-          "label": "Adobe macOS互換性",
+          "label": "Adobe macOS互換性一覧（2026-10-21更新）",
           "url": "https://helpx.adobe.com/jp/download-install/apps/system-requirements/apps-compatible-macos.html"
         },
         {
@@ -311,11 +322,16 @@
     {
       "name": "DriveDx",
       "vendor": "BinaryFruit",
-      "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
+      "status": "compatible",
+      "checked_at": "2026-10-22",
+      "summary": "開発元BinaryFruitのDriveDx公式製品ページに必要OS「macOS 10.9〜macOS 27」と明記。macOS 27対応を公式確認。",
       "issues": [],
-      "sources": []
+      "sources": [
+        {
+          "label": "BinaryFruit DriveDx 公式製品ページ",
+          "url": "https://binaryfruit.com/drivedx"
+        }
+      ]
     },
     {
       "name": "Dropbox",
@@ -377,11 +393,23 @@
     {
       "name": "FileZilla",
       "vendor": "FileZilla Project",
-      "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
-      "issues": [],
-      "sources": []
+      "status": "warning",
+      "checked_at": "2026-10-22",
+      "summary": "FileZilla Client 3.71.1（2026-08-26）の公式変更履歴に、macOS 27で英語以外のロケール設定時にAppKitがクラッシュする問題への回避策を記載。macOS 27上の個別修正を確認したが、全面的な正式対応宣言は未確認。",
+      "issues": [
+        "macOS 27の非英語ロケールでのクラッシュ対策にはClient 3.71.1以降を推奨",
+        "macOS 27全体の動作保証は未確認"
+      ],
+      "sources": [
+        {
+          "label": "FileZilla公式 Version history (JavaScript表示)",
+          "url": "https://filezilla-project.org/versions.php"
+        },
+        {
+          "label": "FileZilla 3.71.1 配布NEWS原文（Fossies収録）",
+          "url": "https://fossies.org/linux/misc/FileZilla_3.71.1_src.tar.xz/filezilla-3.71.1/NEWS?M=1362"
+        }
+      ]
     },
     {
       "name": "Find Any File",
@@ -499,11 +527,28 @@
     {
       "name": "IINA",
       "vendor": "IINA",
-      "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
-      "issues": [],
-      "sources": []
+      "status": "warning",
+      "checked_at": "2026-10-22",
+      "summary": "IINA 1.5.0（2026-10-03）公開。macOS 27の一部動画で音が出ない不具合は1.5.0 Beta 2で修正済み。macOS 27環境の1.5.0について、再生履歴消去後にResume項目が残る報告もあり、全面的な正式対応宣言は未確認。",
+      "issues": [
+        "macOS 27での音声初期化不具合は1.5.0 Beta 2で修正済み。旧Beta使用時は更新を推奨",
+        "macOS 27環境でIINA 1.5.0の再生履歴消去後にResumeが残るIssue #6467（他OSとの差は未確認）",
+        "macOS 27での全機能の検証状況は未確認"
+      ],
+      "sources": [
+        {
+          "label": "IINA 公式GitHub リリース",
+          "url": "https://github.com/iina/iina/releases/tag/v1.5.0"
+        },
+        {
+          "label": "IINA macOS 27音声不具合修正の開発者説明 #6378",
+          "url": "https://github.com/iina/iina/issues/6378"
+        },
+        {
+          "label": "IINA 再生履歴の問題 #6467",
+          "url": "https://github.com/iina/iina/issues/6467"
+        }
+      ]
     },
     {
       "name": "ImageDiff",
@@ -649,14 +694,15 @@
       "name": "MAMP",
       "vendor": "MAMP GmbH",
       "status": "unknown",
-      "checked_at": "2026-09-16",
-      "summary": "MAMP 7.3でmacOS 26対応改善を確認。最新7.4系のリリースノートにmacOS 27明記は未確認。",
+      "checked_at": "2026-10-22",
+      "summary": "MAMP PRO 7.4.4（2026-10-01）でmacOS 27上のPHPクラッシュ修正を公式確認。ただし同更新はMAMP PROアプリ内更新専用で、登録対象のMAMP無償版のmacOS 27対応・同修正適用は未確認。",
       "issues": [
-        "macOS 27対応の明記待ち"
+        "MAMP無償版のmacOS 27対応明記待ち",
+        "MAMP PRO 7.4.4でのPHPクラッシュ修正を無償版にも適用済みとみなさない"
       ],
       "sources": [
         {
-          "label": "MAMP Release Notes",
+          "label": "MAMP & MAMP PRO for Mac リリースノート",
           "url": "https://www.mamp.info/en/release-notes/mac/"
         }
       ]
@@ -743,10 +789,11 @@
       "name": "Nikon NX Studio",
       "vendor": "Nikon",
       "status": "warning",
-      "checked_at": "2026-09-18",
-      "summary": "ニコン公式は2026-09-17時点でmacOS Golden Gate対応を検証予定と案内。結果が出るまでは動作保証なし。",
+      "checked_at": "2026-10-22",
+      "summary": "ニコンはmacOS 27 Golden Gateの互換性を引き続き検証予定としており、結果公表まで動作保証なし。NX Studio 1.11.0が2026-10-14に公開されたが、この公開はmacOS 27対応完了を意味しない。",
       "issues": [
-        "ニコン公式の検証結果が出るまでmacOS 27での動作保証なし"
+        "macOS 27の検証結果が公開されるまで公式動作保証なし",
+        "NX Studio 1.11.0の公開とmacOS 27対応は別情報"
       ],
       "sources": [
         {
@@ -754,12 +801,8 @@
           "url": "https://nij.nikon.com/news/support/2026/0917.html"
         },
         {
-          "label": "Nikon サポート新着",
-          "url": "https://nij.nikon.com/news/support.html"
-        },
-        {
-          "label": "NX Studio デジチューター",
-          "url": "https://nij.nikon.com/support/manual/digitutor/nx_studio.html"
+          "label": "Nikon NX Studio 1.11.0 公開案内 (2026-10-14)",
+          "url": "https://nij.nikon.com/news/support/2026/1014.html"
         }
       ]
     },
@@ -767,10 +810,11 @@
       "name": "Nikon NX Tether",
       "vendor": "Nikon",
       "status": "warning",
-      "checked_at": "2026-09-18",
-      "summary": "ニコン公式は2026-09-17時点でmacOS Golden Gate対応を検証予定と案内。結果が出るまでは動作保証なし。",
+      "checked_at": "2026-10-22",
+      "summary": "ニコンはmacOS 27 Golden Gateの互換性を引き続き検証予定としており、結果公表まで動作保証なし。NX Tether 2.6.1が2026-10-13に公開されたが、この公開はmacOS 27対応完了を意味しない。",
       "issues": [
-        "ニコン公式の検証結果が出るまでmacOS 27での動作保証なし"
+        "macOS 27の検証結果が公開されるまで公式動作保証なし",
+        "NX Tether 2.6.1の公開とmacOS 27対応は別情報"
       ],
       "sources": [
         {
@@ -778,12 +822,8 @@
           "url": "https://nij.nikon.com/news/support/2026/0917.html"
         },
         {
-          "label": "Nikon サポート新着",
-          "url": "https://nij.nikon.com/news/support.html"
-        },
-        {
-          "label": "NX Tether デジチューター",
-          "url": "https://nij.nikon.com/support/manual/digitutor/nx_tether.html"
+          "label": "Nikon NX Tether 2.6.1 公開案内 (2026-10-13)",
+          "url": "https://nij.nikon.com/news/support/2026/1013.html"
         }
       ]
     },
@@ -804,11 +844,23 @@
     {
       "name": "Palette Master Element",
       "vendor": "BenQ",
-      "status": "unknown",
-      "checked_at": "2026-09-16",
-      "summary": "macOS 27の公式対応情報を初回検索では確認できず。継続調査。",
-      "issues": [],
-      "sources": []
+      "status": "incompatible",
+      "checked_at": "2026-10-22",
+      "summary": "BenQは2025-06-03にPalette Master Elementのサポート終了と新OSへの互換性非提供を告知。公式の最終対応OSはmacOS Sequoia 15.1で、macOS 27はサポート対象外。実機で動作しないと確認されたわけではない。",
+      "issues": [
+        "開発元サポート終了。macOS 27での公式動作保証なし",
+        "対応済みとされる最終OSはmacOS 15.1。モニター機種に応じた代替手段を要確認"
+      ],
+      "sources": [
+        {
+          "label": "BenQ Palette Master Element サポート終了告知 (2025-06-03)",
+          "url": "https://www.benq.com/ja-jp/support/downloads-faq/faq/product/application/monitor-faq-kn-00093.html"
+        },
+        {
+          "label": "BenQ Palette Master Element 仕様",
+          "url": "https://www.benq.com/ja-jp/monitor/software/palette-master-element/spec.html"
+        }
+      ]
     },
     {
       "name": "PortraitPro Studio",
@@ -1031,10 +1083,17 @@
       "name": "Visual Studio Code",
       "vendor": "Microsoft",
       "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
-      "issues": [],
-      "sources": []
+      "checked_at": "2026-10-22",
+      "summary": "公式要件ではAppleのセキュリティアップデート対象のmacOSをサポート（通常は最新と前2世代）。macOS 27を個別に明記した互換性確認や検証結果は未確認。",
+      "issues": [
+        "macOS 27個別の検証結果・既知問題を継続確認"
+      ],
+      "sources": [
+        {
+          "label": "Visual Studio Code 公式システム要件",
+          "url": "https://code.visualstudio.com/docs/supporting/requirements"
+        }
+      ]
     },
     {
       "name": "VLC",
