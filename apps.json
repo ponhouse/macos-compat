@@ -13,10 +13,10 @@
       "unknown": "macOS 27について公式確認できず"
     },
     "status_counts": {
-      "compatible": 12,
+      "compatible": 13,
       "warning": 12,
       "incompatible": 3,
-      "unknown": 61
+      "unknown": 60
     }
   },
   "apps": [
@@ -1038,16 +1038,16 @@
     {
       "name": "Transmit",
       "vendor": "Panic",
-      "status": "unknown",
+      "status": "compatible",
       "checked_at": "2026-11-02",
-      "summary": "Transmit 5.11.7（2026-10-01）が公開されているが、確認したPanic公式ページはmacOS 13以降という一般要件のみ。macOS 27個別の正式対応表記は確認できず。",
+      "summary": "Panic公式OS互換性表（2026-10-28更新）にmacOS Golden Gate 27.x対応版としてTransmit 5.11.xが明記。Transmit 5.11.7はこの系列に含まれる。",
       "issues": [
-        "macOS 27個別の対応明記待ち。一般的な最低OS要件だけでは対応済みと判定しない。"
+        "macOS 27ではTransmit 5.11.x系を使用すること。"
       ],
       "sources": [
         {
-          "label": "Panic Transmit 5",
-          "url": "https://panic.com/transmit/"
+          "label": "Panic Downloads and Operating System Compatibility (2026-10-28)",
+          "url": "https://help.panic.com/general/os-compatibility/"
         },
         {
           "label": "Transmit 5 Release Notes",
