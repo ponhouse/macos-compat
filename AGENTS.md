@@ -13,7 +13,7 @@ This repository is the durable source of truth for the user's macOS 27 compatibi
 ## Required workflow
 
 1. Read `RESEARCH_POLICY.md`, `research_sources.json`, and `apps.json` before researching or editing compatibility data.
-2. Preserve the full 91-product inventory unless the user explicitly approves an addition, merge, rename, or removal.
+2. Preserve the full 88-product inventory unless the user explicitly approves an addition, merge, rename, or removal.
 3. Check registered sources first, in their stored priority order. Check recent vendor announcements before product pages.
 4. Prefer primary official sources. Use official-domain fallback search only after registered sources have been checked.
 5. No macOS 27 information means `unknown`; do not infer support from silence.
