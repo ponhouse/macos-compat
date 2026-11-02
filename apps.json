@@ -3,8 +3,8 @@
     "title": "macOS 27 互換性情報",
     "os": "macOS 27",
     "schema_version": 2,
-    "updated_at": "2026-10-22T02:13:00+09:00",
-    "product_count": 91,
+    "updated_at": "2026-11-02T22:34:00+09:00",
+    "product_count": 88,
     "notice": "公式情報を中心に調査した公開用データです。ローカルパス、インストール版、内部調査メモは含みません。",
     "status_definitions": {
       "compatible": "macOS 27対応を公式情報で確認済み",
@@ -13,10 +13,10 @@
       "unknown": "macOS 27について公式確認できず"
     },
     "status_counts": {
-      "compatible": 9,
-      "warning": 15,
+      "compatible": 12,
+      "warning": 12,
       "incompatible": 3,
-      "unknown": 64
+      "unknown": 61
     }
   },
   "apps": [
@@ -305,10 +305,22 @@
       "name": "Cryptomator",
       "vendor": "Skymatic",
       "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
-      "issues": [],
-      "sources": []
+      "checked_at": "2026-11-02",
+      "summary": "安定版のmacOS 27正式対応は個別に未確認。2026-10-30発表のCryptomator 1.20.0-beta1でmacOS 27以降・Apple Silicon向けの実験的FSKit統合を提供。",
+      "issues": [
+        "FSKitはベータ版の任意機能であり、安定版全体の正式対応を意味しない。",
+        "FSKitはApple Silicon専用、少量ファイルの性能低下、Finderタグ・拡張属性・ハードリンク非対応などの制限あり。"
+      ],
+      "sources": [
+        {
+          "label": "Cryptomator FSKit beta announcement (2026-10-30)",
+          "url": "https://cryptomator.org/blog/2026/10/30/beta-document-provider-fskit/"
+        },
+        {
+          "label": "Cryptomator Mac downloads",
+          "url": "https://cryptomator.org/downloads/mac/"
+        }
+      ]
     },
     {
       "name": "DevHub",
@@ -432,15 +444,6 @@
     {
       "name": "Foldery",
       "vendor": "",
-      "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
-      "issues": [],
-      "sources": []
-    },
-    {
-      "name": "Freee.DSig",
-      "vendor": "freee",
       "status": "unknown",
       "checked_at": "",
       "summary": "未調査",
@@ -663,16 +666,15 @@
     {
       "name": "Macs Fan Control",
       "vendor": "CrystalIDEA",
-      "status": "warning",
-      "checked_at": "2026-10-19",
-      "summary": "Macs Fan Control 1.5.22（2026-10-13）でmacOS 27における温度センサーの欠落表示を修正。macOSのヘルパーツール接続エラーも修正。macOS 27での個別問題解消は確認できるが、全面的な正式対応の明記は未確認。",
+      "status": "compatible",
+      "checked_at": "2026-11-02",
+      "summary": "macOS 27でのセンサー欠落を1.5.22で修正。1.5.23（2026-10-28）ではM2 Pro/Max/Ultra等のCPUセンサー値の誤表示と、その値に基づくファン制御への影響を修正。macOS 27での具体的な対応を公式履歴で確認。",
       "issues": [
-        "macOS 27で温度センサーが一部表示されない問題は1.5.22で修正済み。",
-        "macOS 27全機能・全機種の正式対応を示す明記は未確認。"
+        "センサーに基づくファン制御を使う場合は、誤表示の修正を含む1.5.23以降を推奨。"
       ],
       "sources": [
         {
-          "label": "Macs Fan Control 1.5.22 Release Notes",
+          "label": "Macs Fan Control Release Notes",
           "url": "https://crystalidea.com/macs-fan-control/release-notes"
         },
         {
@@ -723,15 +725,6 @@
           "url": "https://www.mamp.info/en/release-notes/mac/"
         }
       ]
-    },
-    {
-      "name": "MINI_KEYBOARD",
-      "vendor": "",
-      "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
-      "issues": [],
-      "sources": []
     },
     {
       "name": "MosaicTool",
@@ -788,42 +781,32 @@
     {
       "name": "Nikon NX Studio",
       "vendor": "Nikon",
-      "status": "warning",
-      "checked_at": "2026-10-22",
-      "summary": "ニコンはmacOS 27 Golden Gateの互換性を引き続き検証予定としており、結果公表まで動作保証なし。NX Studio 1.11.0が2026-10-14に公開されたが、この公開はmacOS 27対応完了を意味しない。",
+      "status": "compatible",
+      "checked_at": "2026-11-02",
+      "summary": "ニコン公式の2026-10-27更新で、macOS 27.0 Golden Gate上のNX Studio 1.11.0（Nikon Transfer 2含む）のApple Silicon基本動作を確認。Apple Siliconネイティブ動作。",
       "issues": [
-        "macOS 27の検証結果が公開されるまで公式動作保証なし",
-        "NX Studio 1.11.0の公開とmacOS 27対応は別情報"
+        "動作確認はmacOS 27.0・Apple Siliconでの基本動作に限定。OS更新後の新たな不具合は別途検証が必要。"
       ],
       "sources": [
         {
-          "label": "Nikon macOS Golden Gate対応についてのご案内",
+          "label": "Nikon macOS Golden Gate対応（2026-10-27更新）",
           "url": "https://nij.nikon.com/news/support/2026/0917.html"
-        },
-        {
-          "label": "Nikon NX Studio 1.11.0 公開案内 (2026-10-14)",
-          "url": "https://nij.nikon.com/news/support/2026/1014.html"
         }
       ]
     },
     {
       "name": "Nikon NX Tether",
       "vendor": "Nikon",
-      "status": "warning",
-      "checked_at": "2026-10-22",
-      "summary": "ニコンはmacOS 27 Golden Gateの互換性を引き続き検証予定としており、結果公表まで動作保証なし。NX Tether 2.6.1が2026-10-13に公開されたが、この公開はmacOS 27対応完了を意味しない。",
+      "status": "compatible",
+      "checked_at": "2026-11-02",
+      "summary": "ニコン公式の2026-10-27更新で、macOS 27.0 Golden Gate上のNX Tether 2.6.1 / Tether Profile 13.0のApple Silicon基本動作を確認。Apple Siliconネイティブ動作。",
       "issues": [
-        "macOS 27の検証結果が公開されるまで公式動作保証なし",
-        "NX Tether 2.6.1の公開とmacOS 27対応は別情報"
+        "動作確認はmacOS 27.0・Apple Siliconでの基本動作に限定。カメラ別対応状況やOS更新後の不具合は別途確認が必要。"
       ],
       "sources": [
         {
-          "label": "Nikon macOS Golden Gate対応についてのご案内",
+          "label": "Nikon macOS Golden Gate対応（2026-10-27更新）",
           "url": "https://nij.nikon.com/news/support/2026/0917.html"
-        },
-        {
-          "label": "Nikon NX Tether 2.6.1 公開案内 (2026-10-13)",
-          "url": "https://nij.nikon.com/news/support/2026/1013.html"
         }
       ]
     },
@@ -953,15 +936,6 @@
       ]
     },
     {
-      "name": "ShutterSnitch",
-      "vendor": "2ndNature",
-      "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
-      "issues": [],
-      "sources": []
-    },
-    {
       "name": "Sloth",
       "vendor": "",
       "status": "unknown",
@@ -1065,10 +1039,21 @@
       "name": "Transmit",
       "vendor": "Panic",
       "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
-      "issues": [],
-      "sources": []
+      "checked_at": "2026-11-02",
+      "summary": "Transmit 5.11.7（2026-10-01）が公開されているが、確認したPanic公式ページはmacOS 13以降という一般要件のみ。macOS 27個別の正式対応表記は確認できず。",
+      "issues": [
+        "macOS 27個別の対応明記待ち。一般的な最低OS要件だけでは対応済みと判定しない。"
+      ],
+      "sources": [
+        {
+          "label": "Panic Transmit 5",
+          "url": "https://panic.com/transmit/"
+        },
+        {
+          "label": "Transmit 5 Release Notes",
+          "url": "https://help.panic.com/releasenotes/transmit5/"
+        }
+      ]
     },
     {
       "name": "unpkg",
