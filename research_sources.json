@@ -3290,27 +3290,34 @@
       "sources": [
         {
           "priority": 1,
+          "type": "os_compatibility",
+          "label": "Panic OS compatibility table",
+          "url": "https://help.panic.com/general/os-compatibility/",
+          "verification": "verified"
+        },
+        {
+          "priority": 2,
           "type": "release_notes",
           "label": "Transmit 5 release notes",
           "url": "https://help.panic.com/releasenotes/transmit5/",
           "verification": "verified"
         },
         {
-          "priority": 2,
+          "priority": 3,
           "type": "release_notes",
           "label": "Transmit 6 release notes",
           "url": "https://help.panic.com/releasenotes/transmit6/",
           "verification": "verified"
         },
         {
-          "priority": 3,
+          "priority": 4,
           "type": "support_news",
           "label": "Panic Transmit support",
           "url": "https://help.panic.com/transmit/",
           "verification": "verified"
         },
         {
-          "priority": 4,
+          "priority": 5,
           "type": "product_page",
           "label": "Transmit product and OS requirements",
           "url": "https://panic.com/transmit/",
