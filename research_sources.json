@@ -421,21 +421,35 @@
       ],
       "sources": [
         {
-          "priority": 1,
+          "type": "os_compatibility",
+          "label": "Apple macOS 27 guide (Pages Numbers Keynote)",
+          "url": "https://support.apple.com/ja-jp/guide/mac-help/mchldc1dd114/27/mac/27",
+          "verification": "verified",
+          "priority": 1
+        },
+        {
+          "type": "support_news",
+          "label": "Apple iWork 15.1 installation",
+          "url": "https://support.apple.com/ja-jp/126151",
+          "verification": "verified",
+          "priority": 2
+        },
+        {
+          "priority": 3,
           "type": "support_news",
           "label": "Apple Pages support",
           "url": "https://support.apple.com/pages",
           "verification": "verified"
         },
         {
-          "priority": 2,
+          "priority": 4,
           "type": "support_news",
           "label": "Apple Numbers support",
           "url": "https://support.apple.com/numbers",
           "verification": "verified"
         },
         {
-          "priority": 3,
+          "priority": 5,
           "type": "support_news",
           "label": "Apple Keynote support",
           "url": "https://support.apple.com/keynote",
@@ -457,7 +471,8 @@
       "identity_status": "verified",
       "automation_allowed": true,
       "official_domains": [
-        "support.apple.com"
+        "support.apple.com",
+        "apps.apple.com"
       ],
       "search_terms": [
         "macOS 27",
@@ -467,14 +482,28 @@
       ],
       "sources": [
         {
-          "priority": 1,
+          "type": "os_compatibility",
+          "label": "Safari macOS 27 guide",
+          "url": "https://support.apple.com/ja-jp/guide/safari/welcome/mac",
+          "verification": "verified",
+          "priority": 1
+        },
+        {
+          "type": "app_store",
+          "label": "iMovie Mac App Store 10.4.5",
+          "url": "https://apps.apple.com/jp/app/imovie/id408981434?mt=12",
+          "verification": "verified",
+          "priority": 2
+        },
+        {
+          "priority": 3,
           "type": "support_news",
           "label": "Apple Safari support",
           "url": "https://support.apple.com/safari",
           "verification": "verified"
         },
         {
-          "priority": 2,
+          "priority": 4,
           "type": "support_news",
           "label": "Apple iMovie support",
           "url": "https://support.apple.com/imovie",
