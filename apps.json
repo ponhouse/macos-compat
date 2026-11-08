@@ -3,7 +3,7 @@
     "title": "macOS 27 互換性情報",
     "os": "macOS 27",
     "schema_version": 2,
-    "updated_at": "2026-11-02T22:34:00+09:00",
+    "updated_at": "2026-11-09T08:21:00+09:00",
     "product_count": 88,
     "notice": "公式情報を中心に調査した公開用データです。ローカルパス、インストール版、内部調査メモは含みません。",
     "status_definitions": {
@@ -13,10 +13,10 @@
       "unknown": "macOS 27について公式確認できず"
     },
     "status_counts": {
-      "compatible": 13,
-      "warning": 12,
+      "compatible": 15,
+      "warning": 13,
       "incompatible": 3,
-      "unknown": 60
+      "unknown": 57
     }
   },
   "apps": [
@@ -159,20 +159,42 @@
     {
       "name": "Apple iWork",
       "vendor": "Apple",
-      "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
-      "issues": [],
-      "sources": []
+      "status": "compatible",
+      "checked_at": "2026-11-09",
+      "summary": "Apple公式macOS 27ユーザガイドでPages、Numbers、KeynoteをmacOS 27上で使用するアプリとして紹介。現行アプリの対応を確認。",
+      "issues": [
+        "旧版と現行版のインストール形式・移行条件が異なる場合があるため、既存アプリのバージョンを確認。"
+      ],
+      "sources": [
+        {
+          "label": "Apple macOS 27 ユーザガイド（Pages・Numbers・Keynote）",
+          "url": "https://support.apple.com/ja-jp/guide/mac-help/mchldc1dd114/27/mac/27"
+        },
+        {
+          "label": "Apple Keynote Pages Numbers 15.1以降のインストール案内",
+          "url": "https://support.apple.com/ja-jp/126151"
+        }
+      ]
     },
     {
       "name": "Apple Media / Browser",
       "vendor": "Apple",
-      "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
-      "issues": [],
-      "sources": []
+      "status": "compatible",
+      "checked_at": "2026-11-09",
+      "summary": "Apple公式のSafariユーザガイドにmacOS 27用と明記。iMovie 10.4.5もApp StoreでmacOS Golden Gate 27以降が必要と明記。登録項目内のSafari / iMovieの現行版対応を確認。",
+      "issues": [
+        "iMovieについては10.4.5以降がmacOS 27向け。インストール済み旧版の動作を個別に保証するものではない。"
+      ],
+      "sources": [
+        {
+          "label": "Safari ユーザガイド macOS 27用",
+          "url": "https://support.apple.com/ja-jp/guide/safari/welcome/mac"
+        },
+        {
+          "label": "iMovie Mac App Store（10.4.5・macOS Golden Gate 27以降）",
+          "url": "https://apps.apple.com/jp/app/imovie/id408981434?mt=12"
+        }
+      ]
     },
     {
       "name": "BatChmod",
@@ -225,11 +247,23 @@
     {
       "name": "calibre",
       "vendor": "calibre",
-      "status": "unknown",
-      "checked_at": "",
-      "summary": "未調査",
-      "issues": [],
-      "sources": []
+      "status": "warning",
+      "checked_at": "2026-11-09",
+      "summary": "calibre 9.17（2026-10-23）の公式リリースノートでmacOS 27特有の電子書籍ビューアの権限確認ダイアログ問題を修正。9.18（2026-11-06）も公開済み。macOS 27での個別修正は確認できるが、全面的な公式対応宣言は未確認。",
+      "issues": [
+        "macOS 27で電子書籍ビューアがGoogle Chromeの「ほかのアプリのデータへのアクセス」の権限確認を表示させる問題は9.17で修正済み。",
+        "macOS 27全面正式対応の明記は未確認。"
+      ],
+      "sources": [
+        {
+          "label": "calibre official release notes 9.17/9.18",
+          "url": "https://calibre-ebook.com/whats-new"
+        },
+        {
+          "label": "calibre Mac download",
+          "url": "https://calibre-ebook.com/download_osx"
+        }
+      ]
     },
     {
       "name": "Chachatto",
@@ -618,14 +652,14 @@
       "name": "Lingon 3",
       "vendor": "",
       "status": "unknown",
-      "checked_at": "2026-10-06",
-      "summary": "未調査",
+      "checked_at": "2026-11-09",
+      "summary": "この登録項目の旧バージョンについてmacOS 27対応は未確認。現行のLingon 10.7 / Lingon Pro 10.3はmacOS 27向けに更新済み。",
       "issues": [
-        "参考: 現行のLingon 10 / Lingon Pro 10はmacOS 27 Golden Gate対応済み。ただし、この項目（旧バージョン）への対応可否は未確認。"
+        "参考: 現行のLingon 10.7およびLingon Pro 10.3は開発元がmacOS 27 Golden Gate向け更新済みと明記。旧版（この登録項目）の対応は未確認。macOS 27ではplistのcom.apple.quarantine属性によりタスクが起動しない場合があり、Lingon Proで再保存すると解除できる。"
       ],
       "sources": [
         {
-          "label": "Lingon official site",
+          "label": "Lingon / Lingon Pro official release notes and FAQ",
           "url": "https://www.peterborgapps.com/lingon/"
         }
       ]
@@ -634,14 +668,14 @@
       "name": "Lingon X",
       "vendor": "",
       "status": "unknown",
-      "checked_at": "2026-10-06",
-      "summary": "未調査",
+      "checked_at": "2026-11-09",
+      "summary": "この登録項目の旧バージョンについてmacOS 27対応は未確認。現行のLingon 10.7 / Lingon Pro 10.3はmacOS 27向けに更新済み。",
       "issues": [
-        "参考: 現行のLingon 10 / Lingon Pro 10はmacOS 27 Golden Gate対応済み。ただし、この項目（旧バージョン）への対応可否は未確認。"
+        "参考: 現行のLingon 10.7およびLingon Pro 10.3は開発元がmacOS 27 Golden Gate向け更新済みと明記。旧版（この登録項目）の対応は未確認。macOS 27ではplistのcom.apple.quarantine属性によりタスクが起動しない場合があり、Lingon Proで再保存すると解除できる。"
       ],
       "sources": [
         {
-          "label": "Lingon official site",
+          "label": "Lingon / Lingon Pro official release notes and FAQ",
           "url": "https://www.peterborgapps.com/lingon/"
         }
       ]
