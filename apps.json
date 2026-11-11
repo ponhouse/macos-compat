@@ -3,7 +3,7 @@
     "title": "macOS 27 互換性情報",
     "os": "macOS 27",
     "schema_version": 2,
-    "updated_at": "2026-11-09T08:21:00+09:00",
+    "updated_at": "2026-11-11T12:59:00+09:00",
     "product_count": 88,
     "notice": "公式情報を中心に調査した公開用データです。ローカルパス、インストール版、内部調査メモは含みません。",
     "status_definitions": {
@@ -13,8 +13,8 @@
       "unknown": "macOS 27について公式確認できず"
     },
     "status_counts": {
-      "compatible": 15,
-      "warning": 13,
+      "compatible": 16,
+      "warning": 12,
       "incompatible": 3,
       "unknown": 57
     }
@@ -73,20 +73,23 @@
     {
       "name": "Adobe Lightroom Classic",
       "vendor": "Adobe",
-      "status": "warning",
-      "checked_at": "2026-10-22",
-      "summary": "Adobe公式の2026-10-21更新macOS 27対応表にもLightroom Classicは未掲載。macOS 26 Tahoe向けには15.0以降が掲載されているが、macOS 27の正式対応は引き続き未確認。",
+      "status": "compatible",
+      "checked_at": "2026-11-11",
+      "summary": "Adobe公式macOS 27 Golden Gate互換性表（英語版2026-11-10更新）でLightroom Classic 16.xが互換性確認済みと明記。2026年11月リリースの16.0以降が対象。",
       "issues": [
-        "macOS 27正式対応の明記待ち",
-        "macOS 26の一部Apple Silicon環境でAIノイズ除去アーティファクトの既知問題"
+        "Adobe公式macOS 27互換性表の当該行に既知問題の記載はない。サードパーティ製プラグインやワークフローは個別検証を推奨。"
       ],
       "sources": [
         {
-          "label": "Adobe macOS互換性一覧（2026-10-21更新）",
+          "label": "Adobe macOS 27 compatibility table (updated 2026-11-10)",
           "url": "https://helpx.adobe.com/jp/download-install/apps/system-requirements/apps-compatible-macos.html"
         },
         {
-          "label": "Lightroom Classic 既知の問題",
+          "label": "Lightroom Classic system requirements (16.0+)",
+          "url": "https://helpx.adobe.com/jp/lightroom-classic/desktop/introduction-to-lightroom-classic/system-requirements.html"
+        },
+        {
+          "label": "Lightroom Classic known issues",
           "url": "https://helpx.adobe.com/jp/lightroom-classic/desktop/troubleshooting/known-issues.html"
         }
       ]
@@ -95,16 +98,18 @@
       "name": "Adobe Photoshop",
       "vendor": "Adobe",
       "status": "compatible",
-      "checked_at": "2026-10-05",
-      "summary": "Adobe公式のmacOS互換性表（2026-10-01更新）で、Adobe Photoshop 27.xがmacOS 27 Golden Gate対応として明記された。",
-      "issues": [],
+      "checked_at": "2026-11-11",
+      "summary": "Adobe公式macOS 27 Golden Gate互換性表（英語版2026-11-10更新）でPhotoshop 27.x以降が互換性確認済みと明記。28.0も対象。",
+      "issues": [
+        "Adobe公式macOS 27互換性表の当該行に既知問題の記載はない。サードパーティ製プラグインやワークフローは個別検証を推奨。"
+      ],
       "sources": [
         {
-          "label": "Adobe macOS互換性",
+          "label": "Adobe macOS 27 compatibility table (updated 2026-11-10)",
           "url": "https://helpx.adobe.com/jp/download-install/apps/system-requirements/apps-compatible-macos.html"
         },
         {
-          "label": "Photoshop 技術要件",
+          "label": "Photoshop technical requirements",
           "url": "https://helpx.adobe.com/jp/photoshop/desktop/get-started/technical-requirements-installation/adobe-photoshop-on-desktop-technical-requirements.html"
         }
       ]
